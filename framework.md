@@ -13,7 +13,7 @@
 
 - 最近发现很多人分不清 『.framework && .a 』、『动态库 && 静态库』、『.tbd && .dylib』这几个东西。甚至, 还有人一直以误为 framework 就是动态库！！鉴于网上许多文章都表述的含糊不清，再加上很多文章都比较老了，所以今天写点东西总结一下。
 
-- 首先，看文章之前，你稍微了解这么几个东西：[编译过程](https://github.com/Damonvvong/iOS---Note/edit/master/framework.md#bulid)、内存分区。下面开始！
+- 首先，看文章之前，你稍微了解这么几个东西：[编译过程](https://github.com/Damonvvong/iOS---Note/blob/master/framework.md#build)、内存分区。下面开始！
 
 --- 
 
@@ -109,7 +109,7 @@
 
 - 阅读完这篇教程，我补充几点。
     - 首先，framework 分为Thin and Fat Frameworks。Thin 的意思就是瘦，指的是单个架构。而 Fat 是胖，指的是多个架构。
-    - 要开发一个真机和模拟器都可以调试的 Frameworks 需要对Frameworks进行合并。合并命令是 `lipo`[lipo](https://github.com/Damonvvong/iOS---Note/edit/master/framework.md#lipo)。
+    - 要开发一个真机和模拟器都可以调试的 Frameworks 需要对Frameworks进行合并。合并命令是 `lipo`[lipo](https://github.com/Damonvvong/iOS---Note/blob/master/framework.md#lipo)。
     - 如果 app 要上架 appstore 在提交审核之前需要把 Frameworks 中模拟器的架构给去除掉。
     - 个人理解，项目组件化或者做 SDK 的时候，最好以 framework 的形式来做。
 

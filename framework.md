@@ -127,7 +127,8 @@
 - 下载新版的 framework
 - 先到 document 下寻找 framework。然后根据条件加载 bundle or document 里的 framework。
 
-```Objective - C
+```objc
+	
 	NSString *fileName = @"remote";
 	
 	NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -146,10 +147,13 @@
 	if (![manager fileExistsAtPath:bundlePath] && loadDocument) {
 		bundlePath = [documentDirectory stringByAppendingPathComponent:[fileName stringByAppendingString:@".framework"]];
 	}
+
 ```
+
 - 再加载 framework
 
-```Objective - C
+
+```objc
 	// Load bundle
 	NSError *error = nil;
 	NSBundle *frameworkBundle = [NSBundle bundleWithPath:bundlePath];

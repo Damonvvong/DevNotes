@@ -1,6 +1,6 @@
 # iOS 开发中的『库』(一)
 
-> 看文章之前，你可以看下下面几个问题，如果你都会了，可以选择不看。
+> 看文章之前，你可以看下下面几个问题，如果你都会了，或许可以不看。
 
 - .framework 是什么？怎么制作？
 - 谈一谈自己对动态库和静态库的理解。
@@ -184,17 +184,18 @@
 ## 番外篇
 ### 关于lipo
 <a name="lipo"/> 
-```
+
+```sh
 $ lipo -info /Debug-iphoneos/Someframework.framwork/Someframework
 # Architectures in the fat file: Someframework are: armv7 armv7s arm64 
 ```
 
-```
+```sh
 # 合并
 $ lipo –create a.framework b.framework –output output.framework
 ```
 
-```
+```sh
 #拆分
 $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 ```
@@ -230,7 +231,11 @@ $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 
 ### 参考资料
 
-[苹果官方文档](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryDesignGuidelines.html#//apple_ref/doc/uid/TP40002013-SW19)
-[添加动态库的 app 提交 AppStore](https://forums.developer.apple.com/thread/21496)
-[framework 动态更新](http://nixwang.com/2015/11/09/ios-dynamic-update/)
+- [苹果官方文档](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryDesignGuidelines.html#//apple_ref/doc/uid/TP40002013-SW19)
+- [添加动态库的 app 提交 AppStore](https://forums.developer.apple.com/thread/21496)
+- [framework 动态更新](http://nixwang.com/2015/11/09/ios-dynamic-update/)
 
+---
+
+### 后记
+- 水平有限，若有错误，希望多多指正！

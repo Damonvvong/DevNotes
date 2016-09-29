@@ -238,4 +238,5 @@ $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 ---
 
 ### 后记
-- 水平有限，若有错误，希望多多指正！
+
+- 水平有限，若有错误，希望多多指正！[coderonevv@gmail.com](coderonevv@gmail.com)

@@ -8,3 +8,6 @@ iOS 开发笔记
 
 ## iOS 开发中的『库』
 - [第一篇](https://github.com/Damonvvong/iOS---Note/blob/master/framework.md)
+- [第二篇](https://github.com/Damonvvong/iOS---Note/blob/master/framework2.md)
+
+

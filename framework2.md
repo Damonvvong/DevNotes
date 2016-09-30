@@ -26,7 +26,7 @@
 
 - 对于一个静态库而言，其实已经是编译好的了,类似一个 **.o** 的集合（这里并没有连接，在[iOS 开发中的『库』(一)](http://www.jianshu.com/p/48aff237e8ff) 所描述的链接其实不对）。在 build 的过程中只会参与链接的过程，而这个链接的过程简单的讲就是**合并**，并且链接器只会将静态库中被**使用的部分**合并到可执行文件中去。相比较于动态库，静态库的处理起来要简单的多，具体如下图：
 
-![静态库链接过程](http://7xlv6p.com1.z0.glb.clouddn.com/2016-10-01-14752663822747.jpg)
+![静态库链接过程](https://github.com/Damonvvong/iOS---Note/blob/master/images/framework2-jtb.jpg)
 
 
 
@@ -89,7 +89,7 @@
 
 - 当然，不是一次，是两次。但是这不是和前面说的相违背了么，其实并不是违背，只是前面说的一次不妥当，最妥当的应该这么说：对于相同路径的动态库，系统只会加载一次。
 
-![内存分区](http://7xlv6p.com1.z0.glb.clouddn.com/memory.png)
+![动态库加载过程](https://github.com/Damonvvong/iOS---Note/tree/master/images)
 
 
 ### 关于。。。好了我先睡了。还有问题，明天再写吧。。希望写的这篇对得起 sunny 和 老司机 的指点。
@@ -119,7 +119,7 @@
 	- 栈又称堆栈, 是`用户存放程序临时创建的局部变量`,也就是说我们函数括弧“{}” 中定义的变量(但不包括static声明的变量,static意味着在`数据段`中存放变量)。除此以外, 在函数被调用时,其参数也会被压入发起调用的进程栈中,并且待到调用结束后,函数的返回值 也会被存放回栈中。由于栈的先进先出特点,所以 栈特别方便用来保存/恢复调用现场。从这个意义上讲,我们可以把堆栈看成一个寄存、交换临时数据的内存区。
 
 ---
-![内存分区](http://7xlv6p.com1.z0.glb.clouddn.com/memory.png)
+![内存分区](https://github.com/Damonvvong/iOS---Note/blob/master/images/framework2-memory.png)
 
 ####小 Tips
 - 栈区中的变量不需要程序员管理

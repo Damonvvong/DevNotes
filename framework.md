@@ -1,5 +1,7 @@
 # iOS 开发中的『库』(一)
 
+- 因为这篇文章有些问题，所以建议看完之后再看下[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOS---Note/blob/master/framework2.md)这篇文章
+
 > 看文章之前，你可以看下下面几个问题，如果你都会了，或许可以不看。
 
 - .framework 是什么？怎么制作？
@@ -241,3 +243,7 @@ $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 ### 后记
 
 - 水平有限，若有错误，希望多多指正！[coderonevv@gmail.com](coderonevv@gmail.com)
+
+### [@我就叫Sunny怎么了](http://weibo.com/u/1364395395) 提出的问题。
+![问题](http://upload-images.jianshu.io/upload_images/437742-0c511f535fe71391.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 我已在[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOS---Note/blob/master/framework2.md) 中修改完毕。

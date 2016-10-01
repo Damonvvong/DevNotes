@@ -89,7 +89,7 @@
 
 - 当然，不是一次，是两次。但是这不是和前面说的相违背了么，其实并不是违背，只是前面说的一次不妥当，最妥当的应该这么说：对于相同路径的动态库，系统只会加载一次。
 
-![动态库加载过程](https://github.com/Damonvvong/iOS---Note/tree/master/images)
+![动态库加载过程](https://github.com/Damonvvong/iOS---Note/blob/master/images/framework2-dtb.jpg)
 
 
 ### 关于。。。好了我先睡了。还有问题，明天再写吧。。希望写的这篇对得起 sunny 和 老司机 的指点。

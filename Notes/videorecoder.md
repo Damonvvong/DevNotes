@@ -296,9 +296,9 @@ self.captureSession = ({
 <a name="SandBox"/> 
 ### 如何查看真机沙盒里面的文件 
 - Xcode -> Window -> Devices
-![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_3.png)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_3.jpg)
 - 选中真机，再右边选中你要导出沙盒的项目，然后点击最下面的设置按钮，然后Download Container.
-![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_4.png)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_4.jpg)
 
 <a name="SessionPreset"/> 
 

@@ -1,6 +1,6 @@
 # iOS 开发中的『库』(一)
 
-- 因为这篇文章有些问题，所以建议看完之后再看下[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOS---Note/blob/master/framework2.md)这篇文章
+- 因为这篇文章有些问题，所以建议看完之后再看下[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework2.md)这篇文章
 
 > 看文章之前，你可以看下下面几个问题，如果你都会了，或许可以不看。
 
@@ -15,7 +15,7 @@
 
 - 最近发现很多人分不清 『.framework && .a 』、『动态库 && 静态库』、『.tbd && .dylib』这几个东西。甚至, 还有人一直以误为 framework 就是动态库！！鉴于网上许多文章都表述的含糊不清，再加上很多文章都比较老了，所以今天写点东西总结一下。
 
-- 首先，看文章之前，你稍微了解这么几个东西：[编译过程](https://github.com/Damonvvong/iOS---Note/blob/master/framework.md#build)、内存分区。下面开始！
+- 首先，看文章之前，你稍微了解这么几个东西：[编译过程](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md#build)、内存分区。下面开始！
 
 --- 
 
@@ -26,9 +26,9 @@
 
 - 首先你得搞清楚，这两个东西都是编译好的**二进制文件**。就是用法不同而已。**为什么要分为动态和静态两种库呢？**先看下图：
 
-![静态库](http://7xlv6p.com1.z0.glb.clouddn.com/address_space1_2x.png)
+![静态库](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-static.png)
 
-![动态库](http://7xlv6p.com1.z0.glb.clouddn.com/address_space2_2x.png)
+![动态库](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-dylib.png)
 
 
 - 我们可以很清楚的看到：
@@ -81,7 +81,7 @@
 
 - Embedded 的意思是嵌入，但是这个嵌入并不是嵌入 app 可执行文件，而是嵌入 app 的 bundle 文件。当一个 app 通过 Embedded 的方式嵌入一个 app 后，在打包之后解压 ipa 可以在包内看到一个 framework 的文件夹，下面都是与这个应用相关的动态framework。在 Xcode 可以在这里设置,图中红色部分：
 
-![Embedded && Link](http://7xlv6p.com1.z0.glb.clouddn.com/Snip20160929_12.png)
+![Embedded && Link](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-embeded.png)
 
 - 那么问题又来了，下面的 **linded feameworks and libraries** 又是什么呢？
 - 首先在 **linded feameworks and libraries** 这个下面我们可以连接系统的动态库、自己开发的静态库、自己开发的动态库。对于这里的静态库而言，会在**编译链接**阶段连接到**app可执行文件**中，而对这里的动态库而言，虽然不会链接到**app可执行文件**中，~~但是会在启动的时候就去加载这里设置的所有动态库~~。(ps.理论上应该是这样，但是在我实际测试中似乎加载不加载都和这个没关系。可能我的姿势不对。😂)
@@ -112,7 +112,7 @@
 
 - 阅读完这篇教程，我补充几点。
     - 首先，framework 分为Thin and Fat Frameworks。Thin 的意思就是瘦，指的是单个架构。而 Fat 是胖，指的是多个架构。
-    - 要开发一个真机和模拟器都可以调试的 Frameworks 需要对Frameworks进行合并。合并命令是 `lipo`[lipo](https://github.com/Damonvvong/iOS---Note/blob/master/framework.md#lipo)。
+    - 要开发一个真机和模拟器都可以调试的 Frameworks 需要对Frameworks进行合并。合并命令是 `lipo`[lipo](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md#lipo)。
     - 如果 app 要上架 appstore 在提交审核之前需要把 Frameworks 中模拟器的架构给去除掉。
     - 个人理解，项目组件化或者做 SDK 的时候，最好以 framework 的形式来做。
 
@@ -226,7 +226,7 @@ $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 ---
 
 ### 谈谈 Mach-O
-![Mach-O](http://7xlv6p.com1.z0.glb.clouddn.com/Snip20160929_15.png)
+![Mach-O](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-mach-o.png)
 - 在制作 framework 的时候需要选择这个 Mach-O Type.
 - 为Mach Object文件格式的缩写，它是一种用于可执行文件，目标代码，动态库，内核转储的文件格式。作为a.out格式的替代，Mach-O提供了更强的扩展性，并提升了符号表中信息的访问速度。
 
@@ -242,8 +242,10 @@ $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 
 ### 后记
 
-- 水平有限，若有错误，希望多多指正！[coderonevv@gmail.com](coderonevv@gmail.com)
+- 水平有限，若有错误，希望多多指正！coderonevv@gmail.com
 
 ### [@我就叫Sunny怎么了](http://weibo.com/u/1364395395) 提出的问题。
-![问题](http://upload-images.jianshu.io/upload_images/437742-0c511f535fe71391.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-- 我已在[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOS---Note/blob/master/framework2.md) 中修改完毕。
+![问题](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-problem.png)
+- 我已在[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework2.md) 中修改完毕。
+
+

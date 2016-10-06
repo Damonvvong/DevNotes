@@ -245,7 +245,7 @@ $ lipo –create a.framework -thin armv7 -output a-output-armv7.framework
 - 水平有限，若有错误，希望多多指正！coderonevv@gmail.com
 
 ### [@我就叫Sunny怎么了](http://weibo.com/u/1364395395) 提出的问题。
-![问题](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-problem.png)
+![问题](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework-problem.jpg)
 - 我已在[iOS 开发中的『库』(二)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework2.md) 中修改完毕。
 
 

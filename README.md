@@ -1,5 +1,4 @@
-# iOS---Note
-iOS 开发笔记
+# iOS 开发笔记
 
 ## 微信小视屏模仿 - AVFoundation 入门
 - [微信小视屏模仿](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md)

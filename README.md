@@ -6,6 +6,7 @@
     - AVFoundation 的初步使用:**先录制再压缩**。[Demo1](https://github.com/Damonvvong/iOSDevNotes/tree/master/Demo/VideoRecoderDemo)
     - 优化方案:按帧压缩视频、**边录制边压缩**。[Demo2](https://github.com/Damonvvong/iOSDevNotes/tree/master/Demo/DWShortVideoRecoder)
     - Tips：如何从导出真机沙盒里面的文件、iOS 默认可选预设
+
 ## CocoaPods 相关
 - [CocoaPods 1.0 + 适配](https://github.com/Damonvvong/DWCategory)
     - CocoaPods 1.0 安装及适配

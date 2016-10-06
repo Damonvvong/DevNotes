@@ -6,6 +6,7 @@ iOS 开发笔记
     - **技术路线**: iOS 开发中的视频录制主要技术路线。
     - AVFoundation 的初步使用:**先录制再压缩**。[Demo1](https://github.com/Damonvvong/iOSDevNotes/tree/master/Demo/VideoRecoderDemo)
     - 优化方案:按帧压缩视频、**边录制边压缩**。[Demo2](https://github.com/Damonvvong/iOSDevNotes/tree/master/Demo/DWShortVideoRecoder)
+    - Tips：如何从导出真机沙盒里面的文件、iOS 默认可选预设
 
 ## iOS 开发中的『库』
 - [iOS 开发中的『库』(一)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md)

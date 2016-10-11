@@ -1,6 +1,6 @@
 # Swift 3 迁移工作总结
 
-## 写在前面
+# 写在前面
 
 - Swift 3.0 正式版发布了差不多快一个月了，断断续续的把手上和 Swift 相关的迁移到了Swift 3.0。所以写点小总结。
 
@@ -20,13 +20,13 @@
 
 #### 界面用 xib 而不用纯代码
 
-- 阴差阳错的，和 Swift 相关的大部分界面都是用xib 画的。而这个 xib 在这次迁移中得到了很大的优势，那就是不用修改和界面相关的代码。想当初要是使用 Swift 写的 UI 的话，这次迁移估计会多很多吧。
+- 阴差阳错的，和 Swift 相关的大部分界面都是用xib 画的。而这个 xib 在这次迁移中得到了很大的优势，xib 和 SB 的代码不适配 Swift 3。想当初要是使用代码写的 UI 的话，这次迁移改动估计会多很多吧。
 
 #### 关于第三方库的选择：
 
-- 对于一个项目来说，三方库似乎成了一道**必选菜**，但是这个菜怎么选其实也有些讲究的。
+- 对于一个项目来说，三方库似乎成了一道**必选菜**，但是如何去选择这道菜呢？
 - 对于三方库，当初的选择是，**能用 OC 就尽量用 OC**。 毕竟可以OC 可以无缝衔接到 Swift，而且还相对稳定。
-- 而选择 **Swift** 相关的三方库时，我尽量值选择使用者比较多的，例如**Alamofire**、**Snap**、**Kingfisher**、**Fabric** 等，因为使用者比较多，开发者会更愿意去维护，而不至于跳票。所以不会存在现在许多小伙伴面临的问题，想迁移，但是有些库没有更新。至少对于我来说，当我想迁移的时候，所有和 Swift 相关的三方库都已经迁移到了 3.0 了。
+- 在选择 **Swift** 相关的三方库时，我尽量值选择使用者比较多的库，例如**Alamofire**、**Snap**、**Kingfisher**、**Fabric** 等，因为使用者比较多，开发者会更愿意去维护，而不至于跳票。所以不会存在现在许多小伙伴面临的问题，想迁移，但是有些库没有更新。至少对于我来说，当我想迁移的时候，所有和 Swift 相关的三方库都已经迁移到了 3.0 了。
 
 >  得益于上面两点，在迁移过程中少了不少工作量。🙈
 
@@ -44,9 +44,10 @@
 
 #### Any && AnyObject
 
-- 我想在做迁移和做完迁移的同学改的最多的一个就是  ` as AnyObjct?` 吧?至少对于我来说是的。
-- 和这个相关的基本是**集合类型**。在 Swift 2 中我们一个用 **[AnyObject]** 来存放任何变量，甚至于存放struct类型的 `String`、`Array` 等。但是按道理 Swift 的 **AnyObject** 指的是类，而 **Any** 才是包括`struct`、`class`、`func` 所有类型。但是为何 **Struct** 可以放入 **[AnyObject]** 呢？主要是在  **Swift 2** 的时候会针对**String**、**Int** 等 **Struct** 进行一个 Implicit Bridging Conversions。而到了 **Swift 3** 则进行了一个[**Fully eliminate implicit bridging conversions from Swift](https://github.com/apple/swift-evolution/blob/master/proposals/0072-eliminate-implicit-bridging-conversions.md)**
-- 当然在我的项目中**[AnyObject]**其实是小事，最麻烦的就是 [String:AnyObject]。因为当初写项目的时候，还是处于 **OC 2 Swift** 的阶段所以对于 Dictionary ，基本采用了 [String:AnyObject], 所以在修改的时候，在很多地方为了这个修改。
+- 我想在做迁移和做完迁移的同学改的最多的一个就是  ` as AnyObjct?` 吧?
+- 至少对于我来说是的。
+- 和这个相关的基本是**集合类型**。在 Swift 2 中我们一个用 **[AnyObject]** 来存放任何变量，甚至于存放struct类型的 `String`、`Array` 等。但是按道理 Swift 的 **AnyObject** 指的是类，而 **Any** 才是包括`struct`、`class`、`func` 等所有类型。但是为何 **Struct** 可以放入 **[AnyObject]** 呢？在  **Swift 2** 的时候会针对**String**、**Int** 等 **Struct** 进行一个 Implicit Bridging Conversions。而到了 **Swift 3** 则进行了一个[**Fully eliminate implicit bridging conversions from Swift](https://github.com/apple/swift-evolution/blob/master/proposals/0072-eliminate-implicit-bridging-conversions.md)**改动。
+- 当然在我的项目中**[AnyObject]**其实是小事，最麻烦的就是 [String:AnyObject]。因为当初写项目的时候，还是处于 **OC To Swift** 的阶段所以对于 Dictionary ，基本采用了 [String:AnyObject], 所以在修改的时候，在很多地方为了这个修改。
     - 起初，我是照着 Xcode 的提示，在 Dictionary 后面的 value 后面加了一个 `as AnyObjct？`
     - 后来渐渐的发现我做了一件很傻比的事情，其实我只要把 [String:AnyObject] 改为 [String:Any] 就可以了。😂
 - 这也就是为什么在第一混编的项目中我花了那么多时间去修改代码了！得益于混编的第二个项目学习了 Yep 的思路，是把 `[String:AnyObject]` 命名为一个叫做 `JSONDictionary` 的类型。所以在 **Any && AnyObect** 这个事情上，就花了一点点时间。
@@ -78,7 +79,7 @@ public typealias JSONDictionary = [String: Any]
 #### Alamofire 等三方库支持 iOS8
 
 - 虽然说我使用的三方库都在第一时间将库升级到了 **Swift 3** ，但是期中 **Alamofire** 和 **Snap** 两个库最低适配只支持到了 iOS 9，为了避免和产品撕逼，不得不想办法解决这个适配问题。下面以 **Alamofire**  为例
-- 其实三方库么，不一定只用 Cocoapods 的。所以，当时是吧源码下载下来准备先改改看。
+- 其实三方库么，不一定只用 Cocoapods 的。所以打算下载代码然后直接撸源码。
 - 先**Alamofire**的 Xcode 修改为最低适配 8.0，然后编译查找不通过的函数，并删除。（其实这些函数都是 iOS 9 新加的函数，所以删除不影响什么。）
 - 大概花了 半个小时左右就可以删完了，然后直接拖到项目中就可以了~
 - **Snap** 其实只要拖进去就好了，暂时不需要修改什么。
@@ -185,8 +186,4 @@ public func stream(with netService: NetService) -> StreamRequest {
 - 最后，终于可以把 Xocde 7 卸载，再也不用担心两个一起开无脑闪退了！！！
 - 最后对于明年的 **Swift 4** 只想说 快来吧~分分钟把你解决！
 - 其实适配之路才刚刚开始，因为 Xcode 8 自动转的代码并没有很好的 Swift 3 化。目前只是说在 Swift 3 可以编译通过了而已~
-
-
-
-
 

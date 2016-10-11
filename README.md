@@ -24,4 +24,9 @@
     - 为什么使用动态库的方式来动态更新只能用在 **in house** 和**develop** 模式却不能在使用到 **AppStore** 上呢？
     - 动态库到底会添加到内存中几次？
 
+## Swift Tips
+- [Swift 3 迁移工作总结](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/SwiftTips_1.md)
+    - 一天时间将4万行 Swift 2 To Swift 3 的工作总结。
+    - 迁移中的问题
+
 

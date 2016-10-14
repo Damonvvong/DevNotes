@@ -25,7 +25,7 @@
 
 - App 的瘦身主要是针对于安装包，而在 iOS 中安装包就是一个以 **.ipa** 结尾的压缩包。我们可以通过 iTunes 下载获取这个 **.ipa** 来分析。
 
-![Yep IPA](http://upload-images.jianshu.io/upload_images/437742-799e5edc138abf80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Yep IPA](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_1.png)
 
 - 稍微整理一下，大致可以分为以下几类。
 
@@ -44,7 +44,7 @@
         - **other**：配置文件
         - **PlugIns**：YepShare，一个共享的插件。
 
-        ![整理后的目录](http://upload-images.jianshu.io/upload_images/437742-37ab7cbecbaf3a71.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+        ![整理后的目录](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_2.png)
 
         
 - 虽然 Yep 不能代表所有的 App，但是在对于 Yep 的 ipa 分析之后，大致可以总结出，对一个 App 的安装包瘦身，可以从**资源层面**和**代码层面**两个层面入手。
@@ -62,9 +62,9 @@
     - **必须资源文件**:例如**应用图标**、**启动图**的这种配置图片。
 - 苹果的[ On-Demand Resources](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/Chapters/Introduction.html#//apple_ref/doc/uid/TP40015083-CH11-SW1)([翻译](http://benbeng.leanote.com/post/On-Demand-Resources-Guide)) 也是通过这种**按需加载资源**的思路给我们提供了一种阶段性加载资源的途径，具体的不展开描述，你可以点前面的链接进行查看。但是虽然以**关卡**、**tag**这种方式来按需加载资源，但是苹果的服务器对于中国用户来说实在是慢的不行，所以暂时不建议采取这种方式。你们可以在自己服务器上实现这种策略方式来加载图片。
 
-![ODR 模式](http://upload-images.jianshu.io/upload_images/437742-3ba0149ac6a46c59.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![ODR 模式](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_3.png)
 
- ![ODR 缓存策略](http://upload-images.jianshu.io/upload_images/437742-56cd559cdf1105e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ![ODR 缓存策略](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_4.png)
 
 
 ### Local
@@ -98,7 +98,7 @@
 - 采用**.xcassets**的方式
     - 我们都知道了，采用**『采用拖的方式,图片包含@2x 或 @3x』**的方式大概图片资源大概减少了**35%**左右，但是稍微损失了一点性能。有什么方式可以减少掉这点性能消耗呢？
     - **“很幸运”** ，苹果在 iOS 9 终于意识到了这个问题，然后提供了一个叫做 **App Slicing**(如下图所示)的东西。**App Slicing**大致就是**App Store**会根据不同的设备准备不同的**安装包(App Variant)**，每个**安装包(App Variant)**都只有相应尺寸的图片,比如 iPhone 6 去下载时，只会下载到 @2x 的图片的**安装包(App Variant)**。但能实现这个功能的前提是图片需要放置在**.xcassets**去管理。
-    ![APP Slicing](http://7xlv6p.com1.z0.glb.clouddn.com/2016-10-14-APP Slicing.png)
+    ![APP Slicing](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_5.png)
     
     - 所以，目前许多 App  采用  **『.xcassets的方式,图片只 包含@2x 或 @3x』** 其实是没意义的，特别是在你**不适配 iOS 8** 的时候，你这么做是强行降低了 App 的性能。当然你要觉得为了 **8% 的非 iOS 9 用户** 减少 App **安装包大小** 而去降低另外 **92% 的用户**的 App **运行性能** 没什么问题，那么你可以采取上面这种方式。
 
@@ -109,7 +109,7 @@
 
 - 关于**压缩**问题。
     - 我是用[tinypng](https://tinypng.com) 来压缩的，应该是以最小的占用量达到了最适合的效果。但是其实**.xcassets** 也会为你做一部分的压缩。如下图所示：
-    ![压缩过程](http://upload-images.jianshu.io/upload_images/437742-1d07e33f2ce7fd67.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+    ![压缩过程](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_6.png)
     - **.xcassets** 的压缩应该还对图片进行了处理这也就是为什么 840KB 压缩了 81.5%，**Assets.car**却没有减少那么多。
     - 同时也有人在试验中发现，用一些压缩工具似乎没有很么实际效果，这也有可能是因为 Xcode 在打包的时候做了一定的处理。
 
@@ -151,7 +151,7 @@
 
 - 虽然说我本人更喜欢用 Swift 来写 App。但从 App 瘦身的角度，不推荐使用 Swift，不论纯 Swift 还是 混编。原因很简单。看一下下面的图：
 
-![](http://upload-images.jianshu.io/upload_images/437742-f5f551b2465fc8f0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_7.png)
 
 - 这是任何一个包含有 Swift 代码的 App 都有的一个为了支持 Swift 的动态库集合，在10M 左右。如果你使用 Objective - C 完全不用这个东西。
 - 当然，我是可以接受安装包大10M 来用 Swift 写的😄。
@@ -160,11 +160,11 @@
 
 - 这个问题也是我在分析 Yep 的第三方库的时候发现的问题，因为 Yep 使用的是 Realm，据说是目前是性能最好的移动端数据库。但是在三方库中可以看到，Realm 的支持占了很大的比重，大约在 8M 左右。但是如果使用 FMDB 话只需要192KB，而 CoreData 几乎可以忽略不计。下面是部分截图。
 
-![FMDB](http://upload-images.jianshu.io/upload_images/437742-164f1978883d674f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![FMDB](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_8.png)
 
-![Realm](http://upload-images.jianshu.io/upload_images/437742-129cb3093a89fee8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Realm](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_9.png)
  
-![RealmSwift](http://upload-images.jianshu.io/upload_images/437742-a18a0313dc5fa3a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![RealmSwift](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/AppBetter_10.png)
 ### MRC VS. ARC 
 - 最开始是在Bang的[这篇文章](http://blog.cnbang.net/tech/2544/)中看到用ARC比用 MRC 会导致可执行文件大10%。起初我是不相信的，但是在我用 SDWebImage 的1.0 版测试之后，ARC 比 MRC 的可执行程序增加了**14% +**。所以MRC 比 ARC 编译成可执行文件之后更小，具体的测试方法可以去他的博客看，这里就不重复了。
 

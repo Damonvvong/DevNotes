@@ -1,5 +1,16 @@
 # iOS 开发笔记
 
+## App优化相关
+- [我的 App 『减肥计划』(一)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/AppBetter_1.md)
+    - 如果你不知道下面几个问题，不妨可以看看文章。
+        - 使用 .xcassets 有什么好处?
+        - @1x 、@2x 和 @3x 会一起内置到安装包中吗？
+        - PDF 和 @1x 、@2x 和 @3x 有什么区别？
+        - 如果我有一个 10 x 10 的控件和一个 50 x 50 的控件，美工需要制作几张 PDF？
+        - Iconfont 是什么？PDF 和 Iconfont 有什么区别？
+        - 启动图的正确打开方式？
+        - 使用 Swift 或者 混编会增大多少的包体积？
+        - Install Smallest  or Coding Fastest ？
 ## 微信小视屏模仿 - AVFoundation 入门
 - [微信小视屏模仿](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md)
     - **技术路线**: iOS 开发中的视频录制主要技术路线。

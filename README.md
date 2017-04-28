@@ -43,5 +43,8 @@
     - 一天时间将4万行 Swift 2 To Swift 3 的工作总结。
     - 迁移中的问题
 - [Swift 性能相关](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/swift_performance.md)
+    - 为什么说 **Swift** 相比较于 **Objective-C** 会更加**快** ？
+    - 为什么在编译 **Swift** 的时候这么**慢** ？
+    - 如何更**优雅**的去写 Swift ？
 
 

@@ -78,7 +78,7 @@ struct DStruct {
 
 在 Swift 中，对于 **平凡类型** 来说都是存在 **栈** 中的，而 **引用类型** 则是存在于 **堆** 中的，如下图所示：
 
-![](http://ohe8u75p8.bkt.clouddn.com/14926144493274.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_1.png)
 
 我们都知道，Swift建议我们多用 **平凡类型**，那么 **平凡类型** 比 **引用类型** 好在哪呢？换句话说「在 **栈** 中的数据和 **堆** 中的数据相比有什么优势？」
 
@@ -105,7 +105,7 @@ struct DStruct {
 
 对于 **自动引用计数** 来说, 在添加 release/retain 的时候采用的是一个宁可多写也不漏写的原则，所以 release/retain 有一定的冗余。这个冗余量大概在 **10%** 的左右（如下图，图片来自于[iOS可执行文件瘦身方法](http://blog.cnbang.net/tech/2544/)）。
 
-![](http://ohe8u75p8.bkt.clouddn.com/14933565302199.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_2.png)
 
 而这也是为什么虽然 ARC 底层对于内存管理的算法进行了优化，在速度上也并没有比 MRC 写出来的快的原因。[这篇文章](http://www.learn-cocos2d.com/2013/03/confirmed-arc-slow/) 详细描述了 ARC 和 MRC 在速度上的比较。
 
@@ -128,7 +128,7 @@ point.draw()
 ```
 - **动态调度**: 在执行的时候，会根据运行时，采用 **V-Table** 的方式，找到方法的执行体，然后执行。无法进行编译期优化。**V-Table** 不同于 OC 的调度，在 OC 中，是先在运行时的时候先在子类中寻找方法，如果找不到，再去父类寻找方法。而对于 V-Table 来说，它的调度过程如下图:
 
-![](http://ohe8u75p8.bkt.clouddn.com/14921626106538.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_3.png)
 
 因此，在性能上「**静态调度** > **动态调度**」并且「**Swift中的V-Table** > **Objective-C 的动态调度**」。
     
@@ -151,20 +151,22 @@ protocol Drawable {
 
 对于第一个问题，如何去调度一个方法？因为对于 **平凡类型** 来说，并没有什么虚函数指针，所以在 Swift 中并没有 **V-Table** 的方式，但是还是用到了一个叫做 **The Protocol Witness Table (PWT)** 的函数表，如下图所示：
 
-![](http://ohe8u75p8.bkt.clouddn.com/14926690668979.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_4.png)
 
 对于每一个 Struct:Protocol 都会生成一个 StructProtocol 的 **PWT**。
 
 对于第二个问题，如何保证内存对齐问题？
 
-![](http://ohe8u75p8.bkt.clouddn.com/14926694328444.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_5.png)
 
 有一个简单粗暴的方式就是，取最大的Size作为数组的内存对齐的标准，但是这样一来不但会造成内存浪费的问题，还会有一个更棘手的问题，如何去寻找最大的Size。所以为了解决这个问题，Swift 引入一个叫做 **Existential Container** 的数据结构。
-![](http://ohe8u75p8.bkt.clouddn.com/14933593497297.jpg)
+
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_6.png)
 
 - **Existential Container**
 
-![](http://ohe8u75p8.bkt.clouddn.com/14926703518284.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_7.png)
+
 
 这是一个最普通的 Existential Container。
 
@@ -181,15 +183,14 @@ struct ExistContDrawable {    var valueBuffer: (Int, Int, Int)    var vwt: Val
 
 所以，对于上文代码中的 Point 和 Line 最后的数据结构大致如下：
  
-![](http://ohe8u75p8.bkt.clouddn.com/14933752779248.jpg)
-
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_8.png)
 
 这里需要注意的几个点：
 
 - 在 ABI 稳定之前 value buffer 的 size 可能会变，对于是不是 3个 word 还在 Swift 团队还在权衡.
 - Existential Container 的 size 不是只有 5 个 word。示例如下：
 
-![](http://ohe8u75p8.bkt.clouddn.com/14933614551091.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_9.png)
 
 对于这个大小差异最主要在于这个 PWT 指针，对于 Any 来说，没有具体的函数实现，所以不需要 PWT 这个指针，但是对于 ProtocolOne&ProtocolTwo 的组合协议，是需要两个 PWT 指针来表示的。
 
@@ -210,7 +211,7 @@ struct Pair {    init(_ f: Drawable, _ s: Drawable) {        first = f ; secon
 ```
 首先，我们把 Drawable 协议当做一个类型，作为 Pair 的属性，由于协议类型的 value buffer 只有三个 word，所以如果一个 struct(比如上文的Line) 超过三个 word,那么会将值保存到堆中，因此会造成下图的现象：
 
-![](http://ohe8u75p8.bkt.clouddn.com/14926708778614.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_10.png)
 
 一个简单的复制，导致属性的copy，从而引起 **大量的堆内存分配**。
 
@@ -218,7 +219,7 @@ struct Pair {    init(_ f: Drawable, _ s: Drawable) {        first = f ; secon
 
 当然，如果你非要将协议当做类型也是可以解决的，首先需要把Line改为class而不是struct，目的就是引入引用计数。所以，将Line改为class之后，就变成了如下图所示：
 
-![](http://ohe8u75p8.bkt.clouddn.com/14927153731852.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_11.png)
 
 至于修改了 line 的 x1 导致所有 pair 下的 line 的 x1 的值都变了，我们可以引入 **Copy On Write** 来解决。
 
@@ -244,7 +245,7 @@ protocol Drawable {    func draw()}func drawACopy(local : Drawable) {    loc
 
 在 Xcode 8 之前，唯一的区别就是由于使用了泛型，所以在调度方法是，我们已经可以根据上下文确定了这个 **T** 到底是什么类型，所以并不需要 **Existential Container**，所以泛型没有使用 **Existential Container**，但是因为还是多态，所以还是需要VWT和PWT作为隐形参数传递，对于临时变量仍然按照ValueBuffer的逻辑存储 - 分配3个word，如果存储数据大小超过3个word，则在堆上开辟内存存储。如图所示：
 
-![](http://ohe8u75p8.bkt.clouddn.com/14933702704087.jpg)
+![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/performance_12.png)
 
 这样的形式其实和把协议作为类型并没有什么区别。唯一的就是没有 **Existential Container** 的中间层了。
 
@@ -301,6 +302,10 @@ Point(x: 1.0, y: 1.0).draw()
 - [真实世界中的 Swift 性能优化](https://news.realm.io/cn/news/real-world-swift-performance)
 - [Exploring Swift Memory Layout](https://news.realm.io/news/goto-mike-ash-exploring-swift-memory-layout/)
 - 水平有限，若有错误，希望多多指正！coderonevv#gmail.com
+
+
+
+
 
 
 

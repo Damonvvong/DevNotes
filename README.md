@@ -42,5 +42,6 @@
 - [Swift 3 迁移工作总结](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/SwiftTips_1.md)
     - 一天时间将4万行 Swift 2 To Swift 3 的工作总结。
     - 迁移中的问题
+- [Swift 性能相关](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/swift_performance.md)
 
 

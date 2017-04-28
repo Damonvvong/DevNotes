@@ -96,6 +96,7 @@
 ## 番外篇
 > 摘抄自个人笔记。
 <a name="memory"/> 
+
 ### 关于内存五大分区
 
 - **BSS段:**
@@ -118,7 +119,7 @@
 ---
 ![内存分区](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework2-memory.png)
 
-####小 Tips
+#### 小 Tips
 - 栈区中的变量不需要程序员管理
 - 堆区的需要程序员管理
 - 在 iOS 中堆区的内存是所有应用程序共享

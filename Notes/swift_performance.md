@@ -74,7 +74,7 @@ struct DStruct {
 	 
 - **栈 (*stack heap*)**
 
-栈又称堆栈, 是`用户存放程序临时创建的局部变量`,也就是说我们函数括弧“{}” 中定义的变量(但不包括static声明的变量,static意味着在`数据段`中存放变量)。除此以外, 在函数被调用时,其参数也会被压入发起调用的进程栈中,并且待到调用结束后,函数的返回值 也会被存放回栈中。由于栈的先进先出特点,所以 栈特别方便用来保存/恢复调用现场。从这个意义上讲,我们可以把堆栈看成一个寄存、交换临时数据的内存区。
+栈又称堆栈, 是`用户存放程序临时创建的局部变量`,也就是说我们函数括弧“{}” 中定义的变量(但不包括static声明的变量,static意味着在`数据段`中存放变量)。除此以外, 在函数被调用时,其参数也会被压入发起调用的进程栈中,并且待到调用结束后,函数的返回值 也会被存放回栈中。由于栈的后进先出特点,所以 栈特别方便用来保存/恢复调用现场。从这个意义上讲,我们可以把堆栈看成一个寄存、交换临时数据的内存区。
 
 在 Swift 中，对于 **平凡类型** 来说都是存在 **栈** 中的，而 **引用类型** 则是存在于 **堆** 中的，如下图所示：
 
@@ -119,9 +119,18 @@ struct DStruct {
 
 - **静态调度**: 可以进行inline和其他编译期优化，在执行的时候，会直接跳到方法的实现。
 
-```Swiftstruct Point {    var x, y: Double    func draw() {        // Point.draw implementation    } 
-}func drawAPoint(_ param: Point) {
-    param.draw()}let point = Point(x: 0, y: 0)drawAPoint(point)
+```Swift
+struct Point {
+    var x, y: Double
+    func draw() {
+        // Point.draw implementation
+    } 
+}
+func drawAPoint(_ param: Point) {
+    param.draw()
+}
+let point = Point(x: 0, y: 0)
+drawAPoint(point)
 // 1.编译后变为下面的inline方式
 point.draw()
 // 2.运行时，直接跳到实现 Point.draw implementation
@@ -139,8 +148,19 @@ point.draw()
 ```Swift
 protocol Drawable {
     func draw()
-}struct Point : Drawable {    var x, y: Double    func draw() { ... }}struct Line : Drawable {    var x1, y1, x2, y2: Double    func draw() { ... }}var drawables: [Drawable]
-// Drawable 就称为协议类型for d in drawables {    d.draw()
+}
+struct Point : Drawable {
+    var x, y: Double
+    func draw() { ... }
+}
+struct Line : Drawable {
+    var x1, y1, x2, y2: Double
+    func draw() { ... }
+}
+var drawables: [Drawable]
+// Drawable 就称为协议类型
+for d in drawables {
+    d.draw()
 }
 ```
 
@@ -178,7 +198,11 @@ protocol Drawable {
 
 ```Swift
 // Swift 伪代码
-struct ExistContDrawable {    var valueBuffer: (Int, Int, Int)    var vwt: ValueWitnessTable    var pwt: DrawableProtocolWitnessTable}
+struct ExistContDrawable {
+    var valueBuffer: (Int, Int, Int)
+    var vwt: ValueWitnessTable
+    var pwt: DrawableProtocolWitnessTable
+}
 ```
 
 所以，对于上文代码中的 Point 和 Line 最后的数据结构大致如下：
@@ -207,7 +231,13 @@ OK，由于 Existential Container 的引入，我们可以将协议作为类型�
 为什么这么说？先来看一段代码：
 
 ```Swift
-struct Pair {    init(_ f: Drawable, _ s: Drawable) {        first = f ; second = s    }    var first: Drawable    var second: Drawable}
+struct Pair {
+    init(_ f: Drawable, _ s: Drawable) {
+        first = f ; second = s
+    }
+    var first: Drawable
+    var second: Drawable
+}
 ```
 首先，我们把 Drawable 协议当做一个类型，作为 Pair 的属性，由于协议类型的 value buffer 只有三个 word，所以如果一个 struct(比如上文的Line) 超过三个 word,那么会将值保存到堆中，因此会造成下图的现象：
 
@@ -231,14 +261,35 @@ struct Pair {    init(_ f: Drawable, _ s: Drawable) {        first = f ; secon
 首先，如果我们把协议当做类型来处理，我们称之为 **「动态多态」**，代码如下：
 
 ```Swift
-protocol Drawable {    func draw()}func drawACopy(local : Drawable) {    local.draw()}let line = Line()drawACopy(line)// ...let point = Point()drawACopy(point)
+protocol Drawable {
+    func draw()
+}
+func drawACopy(local : Drawable) {
+    local.draw()
+}
+let line = Line()
+drawACopy(line)
+// ...
+let point = Point()
+drawACopy(point)
 
 ```
 
 而如果我们使用泛型来改写的话，我们称之为 **「静态多态」**，代码如下：
 
 ```Swift
-// Drawing a copy using a generic methodprotocol Drawable {    func draw()}func drawACopy<T: Drawable>(local : T) {    local.draw()}let line = Line()drawACopy(line)// ...let point = Point()drawACopy(point)
+// Drawing a copy using a generic method
+protocol Drawable {
+    func draw()
+}
+func drawACopy<T: Drawable>(local : T) {
+    local.draw()
+}
+let line = Line()
+drawACopy(line)
+// ...
+let point = Point()
+drawACopy(point)
 ```
 
 而这里所谓的 **动态** 和 **静态** 的区别在哪里呢？

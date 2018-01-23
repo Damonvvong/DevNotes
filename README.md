@@ -59,7 +59,7 @@
     - 为什么说 **Swift** 相比较于 **Objective-C** 会更加**快** ？
     - 为什么在编译 **Swift** 的时候这么**慢** ？
     - 如何更**优雅**的去写 Swift ？
-- [Swift 编码规范](https://github.com/Damonvvong/DevNotes/blob/master/Notes/swift_performance.md)
+- [Swift 编码规范](https://github.com/Damonvvong/DevNotes/blob/master/Notes/swift_style_guide.md)
     - 参照 [Raywenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)、[Linkedin Swift Style Guide](https://github.com/linkedin/swift-style-guide)、[Github Swift Style Guide](https://github.com/github/swift-style-guide)、[Eure  Swift Style Guide](https://github.com/eure/swift-style-guide) 总结的规范
 </details>
 

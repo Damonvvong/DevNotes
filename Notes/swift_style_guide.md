@@ -929,10 +929,10 @@ class Pirate {
 
 ### 参考
 
-[Raywenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
-[Linkedin Swift Style Guide](https://github.com/linkedin/swift-style-guide)
-[Github Swift Style Guide](https://github.com/github/swift-style-guide)
-[Eure  Swift Style Guide](https://github.com/eure/swift-style-guide)
+- [Raywenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
+- [Linkedin Swift Style Guide](https://github.com/linkedin/swift-style-guide)
+- [Github Swift Style Guide](https://github.com/github/swift-style-guide)
+- [Eure  Swift Style Guide](https://github.com/eure/swift-style-guide)
 
 
 

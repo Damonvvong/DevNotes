@@ -1,7 +1,7 @@
 #### iOS 开发笔记
 
 <details>
-<summary> **优化相关** </summary>
+<summary> 优化相关 </summary>
 
 - [iOS App 瘦身 - 以 Swift App Yep 为例](https://github.com/Damonvvong/DevNotes/blob/master/Notes/optimize_app_size_1.md)
     - 使用 **.xcassets** 有什么好处? 放置在 **.xcassets** 的 **PDF** 在编译时会如何处理？
@@ -29,7 +29,7 @@
 </details>
 
 <details>
-<summary> **工具相关** </summary>
+<summary> 工具相关 </summary>
 
 - [CocoaPods 1.0 + 适配](https://github.com/Damonvvong/DWCategory)
     - CocoaPods 1.0 安装及适配
@@ -39,7 +39,7 @@
 </details>
 
 <details>
-<summary> **功能模仿** </summary>
+<summary> 功能模仿 </summary>
  
 - [微信小视屏模仿 - AVFoundation 入门](https://github.com/Damonvvong/DevNotes/blob/master/Notes/videorecoder.md)
     - **技术路线**: iOS 开发中的视频录制主要技术路线。
@@ -50,7 +50,7 @@
 
 
 <details>
-<summary> **Swift 相关** </summary>
+<summary> Swift 相关 </summary>
 
 - [Swift 3 迁移工作总结](https://github.com/Damonvvong/DevNotes/blob/master/Notes/SwiftTips_1.md)
     - 一天时间将4万行 Swift 2 To Swift 3 的工作总结。

@@ -22,7 +22,7 @@
     - **AVFoundation**:是一个可以用来使用和创建基于时间的视听媒体的框架，它提供了一个能使用基于时间的视听数据的接口。
     - **ffmpeg**:一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。
 
->  看上去很懵逼是不是，其实我也是懵逼的。更甚至于AVFoundation 和 ffmpeg 两者关系我最开始都摸不透。如果你和我一样懵逼可以看一下。我写的[AVFoundation](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md#AVFoundation)和视频捕捉相关的总结。ffmpeg 则 需要去看[雷神](http://blog.csdn.net/leixiaohua1020/article/details/47071547)的博客了,很详细,也很入门。
+>  看上去很懵逼是不是，其实我也是懵逼的。更甚至于AVFoundation 和 ffmpeg 两者关系我最开始都摸不透。如果你和我一样懵逼可以看一下。我写的[AVFoundation](https://github.com/Damonvvong/DevNotes/blob/master/Notes/videorecoder.md#AVFoundation)和视频捕捉相关的总结。ffmpeg 则 需要去看[雷神](http://blog.csdn.net/leixiaohua1020/article/details/47071547)的博客了,很详细,也很入门。
 
 - 对于以上三种，首先**UIImagePickerController**肯定不在考虑范围之内了，可定制化太低。
 - 对于利用相机录取视频只能用 **AVFoundation** 的  **AVCaptureSession** 来捕捉。
@@ -33,12 +33,12 @@
 
 ## 废话不多说，上代码。
 
-> 对于 AVFoundation 捕捉只是还不是很清楚的可以点击[这里](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md#AVFoundation1)查看。
-> - [Demo1](https://github.com/Damonvvong/iOSDevNotes/tree/master/Demo/VideoRecoderDemo)下载链接
+> 对于 AVFoundation 捕捉只是还不是很清楚的可以点击[这里](https://github.com/Damonvvong/DevNotes/blob/master/Notes/videorecoder.md#AVFoundation1)查看。
+> - [Demo1](https://github.com/Damonvvong/DevNotes/tree/master/Demo/VideoRecoderDemo)下载链接
 
 ### 录制前的准备工作
 
-- 第(1/5)步，你得有一个 **AVCaptureSession**[?](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md#AVCaptureSession) 对象，作为 输入、输出的 **中间件**。
+- 第(1/5)步，你得有一个 **AVCaptureSession**[?](https://github.com/Damonvvong/DevNotes/blob/master/Notes/videorecoder.md#AVCaptureSession) 对象，作为 输入、输出的 **中间件**。
 
 ```objc
 @property (nonatomic, strong) AVCaptureSession *captureSession;/**< 捕捉会话 */
@@ -154,7 +154,7 @@ self.captureSession = ({
 
 ### 查看录制视频
 
-- 关于如何查看沙盒内容可以点击[这里](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md#SandBox)
+- 关于如何查看沙盒内容可以点击[这里](https://github.com/Damonvvong/DevNotes/blob/master/Notes/videorecoder.md#SandBox)
 - 拿到的视频大概 **8S**。**15.9 M** 左右。Excuse me ？小视屏，**15.9M**？
 - 莫急，可以压缩嘛。
 
@@ -185,13 +185,13 @@ self.captureSession = ({
 
 ### ok！利用 AVFoundation 模仿小视屏功能就这么实现了~ 总结一下，如图
 
-![录制视频](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_2.png)
+![录制视频](https://github.com/Damonvvong/DevNotes/blob/master/images/videorecoder_2.png)
 
 
 ### 哈哈哈,那是不可能的
 
 - 虽然说，我们已经利用摄像头，能录制视频，且压缩到1M 以下，但是还是存在以下问题：
-  - 我们选择的尺寸不符合小视屏的尺寸。微信视频的尺寸比例大概是4:3。[可选预设](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/videorecoder.md#SessionPreset)
+  - 我们选择的尺寸不符合小视屏的尺寸。微信视频的尺寸比例大概是4:3。[可选预设](https://github.com/Damonvvong/DevNotes/blob/master/Notes/videorecoder.md#SessionPreset)
   - 据[iOS微信小视频优化心得](http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207686973&idx=1&sn=1883a6c9fa0462dd5596b8890b6fccf6&3rd=MzA3MDU4NTYzMw==&scene=6#rd)说这样很耗时。所有对视频的处理都需要在录制完成之后来做。
 - 总之还有更好的办法。
 
@@ -213,7 +213,7 @@ self.captureSession = ({
 
 - 根据上面的分析，对于视频录制部分大致先分成三部分，一部分是读(DWVideoRecoder)、一部分是写(DWVideoWriter)、一部分是预览(DWPreviewView).如下图：
 
-![优化版](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_1.png)
+![优化版](https://github.com/Damonvvong/DevNotes/blob/master/images/videorecoder_1.png)
 
 #### DWPreviewView
 - 主要是一个预览层，同时还需要处理 用户 与 Session 之间的交互
@@ -296,9 +296,9 @@ self.captureSession = ({
 <a name="SandBox"/> 
 ### 如何查看真机沙盒里面的文件 
 - Xcode -> Window -> Devices
-![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_3.jpg)
+![](https://github.com/Damonvvong/DevNotes/blob/master/images/videorecoder_3.jpg)
 - 选中真机，再右边选中你要导出沙盒的项目，然后点击最下面的设置按钮，然后Download Container.
-![](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/videorecoder_4.jpg)
+![](https://github.com/Damonvvong/DevNotes/blob/master/images/videorecoder_4.jpg)
 
 <a name="SessionPreset"/> 
 

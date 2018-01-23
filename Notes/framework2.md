@@ -24,9 +24,9 @@
 ## 纠错篇
 ### 静态库的处理方式
 
-- 对于一个静态库而言，其实已经是编译好的了,类似一个 **.o** 的集合（这里并没有连接，在[iOS 开发中的『库』(一)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md) 所描述的链接其实不对）。在 build 的过程中只会参与链接的过程，而这个链接的过程简单的讲就是**合并**，并且链接器只会将静态库中被**使用的部分**合并到可执行文件中去。相比较于动态库，静态库的处理起来要简单的多，具体如下图：
+- 对于一个静态库而言，其实已经是编译好的了,类似一个 **.o** 的集合（这里并没有连接，在[iOS 开发中的『库』(一)](https://github.com/Damonvvong/DevNotes/blob/master/Notes/framework.md) 所描述的链接其实不对）。在 build 的过程中只会参与链接的过程，而这个链接的过程简单的讲就是**合并**，并且链接器只会将静态库中被**使用的部分**合并到可执行文件中去。相比较于动态库，静态库的处理起来要简单的多，具体如下图：
 
-![静态库链接过程](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework2-jtb.jpg)
+![静态库链接过程](https://github.com/Damonvvong/DevNotes/blob/master/images/framework2-jtb.jpg)
 
 
 
@@ -37,7 +37,7 @@
 
 - 最后，链接器会用函数的实际地址来代替函数引用。
 
-> 所以，在 **[iOS 开发中的『库』(一)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md)** 所提到，将头文件添加到可执行文件是**不正确**的。
+> 所以，在 **[iOS 开发中的『库』(一)](https://github.com/Damonvvong/DevNotes/blob/master/Notes/framework.md)** 所提到，将头文件添加到可执行文件是**不正确**的。
 
 
 ### 动态库的处理方式
@@ -47,7 +47,7 @@
     - **动态加载库**：当需要的时候再使用 dlopen 等通过代码或者命令的方式来加载。【在程序启动之后】
 - 但是不论是哪种动态库，相比较与静态库，动态库处理起来要棘手的多。由于动态库是动态的，所以你事先不知道某个函数的具体地址。因此动态链接器在链接函数的时候需要做大量的工作。
 
-> 因为动态库在链接函数需要做大量的工作，而静态库已经实现处理好了。所以单纯的在所有都没有加载的情况下，静态库的加载速度会更快一点。而在 **[iOS 开发中的『库』(一)](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md)** 提到的有所不妥，正确应该是，虽然动态库更加耗时，但是对于在加载过的share libraries不需要再加载的这个前提下，使用动态库可以节省一些启动时间。 
+> 因为动态库在链接函数需要做大量的工作，而静态库已经实现处理好了。所以单纯的在所有都没有加载的情况下，静态库的加载速度会更快一点。而在 **[iOS 开发中的『库』(一)](https://github.com/Damonvvong/DevNotes/blob/master/Notes/framework.md)** 提到的有所不妥，正确应该是，虽然动态库更加耗时，但是对于在加载过的share libraries不需要再加载的这个前提下，使用动态库可以节省一些启动时间。 
 
 - 而实现这个**动态链接**是使用了 **Procedure Linkage Table (PLT)**。首先这个 **PLT** 列出了程序中每一个函数的调用，当程序开始运行，如果动态库被加载到内存中，**PLT** 会去寻找动态的地址并记录下来，如果每个函数都被调用过的话，下一次调用就可以通过 **PLT** 直接跳转了，但是和静态库还是有点区别的是，每一个函数的调用还是需要通过一张 **PLT**。这也正是 sunny 所说的所有静态链接做的事情都搬到运行时来做了，会导致**更慢** 的原因。
 
@@ -55,7 +55,7 @@
 
 - 其实这个命题最开始就跑偏了，在和[@酷酷的哀殿](http://weibo.com/u/1895821307) 等几个小伙伴讨论未果之后，在老司机[@Casa Taloyum 大神](http://weibo.com/casatwy) 的点拨下，明白了问题出在了哪里。
 - 首先，不管是静态库、动态库，两者的区别和在内存哪个区域没有关系，最本质的区别是，一个的函数调用等在编译时候就已经确定，而动态库是动态加载的。换句话说，静态库修改了东西，整个程序需要重新编译，而对于动态库的修改而言，只需要重启 **app**（重置 **PLT** ）。
-- 至于在内存的哪个区域，和是 **静态库** or **动态库** 没有关系。代码段、数据段这些，都是程序加载时就进入的。堆一般是文件buffer分配、对象初始化等时候用的。栈是函数出入口指针，局部常规变量用的。只要 malloc 都在堆里。具体的可以参照[这里](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework2.md#memory)
+- 至于在内存的哪个区域，和是 **静态库** or **动态库** 没有关系。代码段、数据段这些，都是程序加载时就进入的。堆一般是文件buffer分配、对象初始化等时候用的。栈是函数出入口指针，局部常规变量用的。只要 malloc 都在堆里。具体的可以参照[这里](https://github.com/Damonvvong/DevNotes/blob/master/Notes/framework2.md#memory)
 - 还需要提一下的是，如果是动态加载库，那么在没有加载的时候，代码段、数据段这些也是不会加载进去的。lazy load。
 
 ### .a 的使用
@@ -89,7 +89,7 @@
 
 - 当然，不是一次，是两次。但是这不是和前面说的相违背了么，其实并不是违背，只是前面说的一次不妥当，最妥当的应该这么说：对于相同路径的动态库，系统只会加载一次。
 
-![动态库加载过程](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework2-dtb.jpg)
+![动态库加载过程](https://github.com/Damonvvong/DevNotes/blob/master/images/framework2-dtb.jpg)
 
 ---
 
@@ -117,7 +117,7 @@
 	- 栈又称堆栈, 是`用户存放程序临时创建的局部变量`,也就是说我们函数括弧“{}” 中定义的变量(但不包括static声明的变量,static意味着在`数据段`中存放变量)。除此以外, 在函数被调用时,其参数也会被压入发起调用的进程栈中,并且待到调用结束后,函数的返回值 也会被存放回栈中。由于栈的后进先出特点,所以 栈特别方便用来保存/恢复调用现场。从这个意义上讲,我们可以把堆栈看成一个寄存、交换临时数据的内存区。
 
 ---
-![内存分区](https://github.com/Damonvvong/iOSDevNotes/blob/master/images/framework2-memory.png)
+![内存分区](https://github.com/Damonvvong/DevNotes/blob/master/images/framework2-memory.png)
 
 #### 小 Tips
 - 栈区中的变量不需要程序员管理

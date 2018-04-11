@@ -1,0 +1,6 @@
+framework module Pods_ResourcesOCPod_Example {
+  umbrella header "Pods-ResourcesOCPod_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,12 @@
+#use_frameworks!
+use_frameworks!
+
+target 'ResourcesOCPod_Example' do
+  pod 'ResourcesOCPod', :path => '../'
+
+  target 'ResourcesOCPod_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

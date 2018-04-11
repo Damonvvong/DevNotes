@@ -1,0 +1,16 @@
+PODS:
+  - ResourcesOCPod (0.1.0)
+
+DEPENDENCIES:
+  - ResourcesOCPod (from `../`)
+
+EXTERNAL SOURCES:
+  ResourcesOCPod:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ResourcesOCPod: 880f508a203c57b2938a8a36c0f751170cc5c2c2
+
+PODFILE CHECKSUM: b45105182b110e85a630c2d563654712a1fbaa4a
+
+COCOAPODS: 1.4.0

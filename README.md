@@ -1,6 +1,16 @@
 #### iOS 开发笔记
 
 <details>
+<summary> 项目相关 </summary>
+
+- [iOS 开发中的资源管理问题](https://github.com/Damonvvong/DevNotes/blob/master/Notes/resource_manage.md)
+    - 如何更高效的同步素材图?
+    - 如何更安全的读取素材图?
+    - 如何解决组件之间的重名问题？
+
+</details>
+
+<details>
 <summary> 优化相关 </summary>
 
 - [iOS App 瘦身 - 以 Swift App Yep 为例](https://github.com/Damonvvong/DevNotes/blob/master/Notes/optimize_app_size_1.md)
@@ -9,7 +19,7 @@
     - 如果我有一个 10 x 10 的控件和一个 50 x 50 的控件，美工需要制作几张 PDF？
     - 启动图的正确打开方式？
     - 使用 Swift 混编的项目会对包体积有什么影响？到底如何抉择是否使用Swift。
-    - 
+
 </details>
 
 <details>

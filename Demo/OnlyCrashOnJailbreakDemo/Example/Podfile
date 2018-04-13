@@ -1,4 +1,3 @@
-#use_frameworks!
 use_frameworks!
 
 target 'ResourcesOCPod_Example' do

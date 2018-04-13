@@ -24,7 +24,7 @@
     image1View.center = self.view.center;
 
     UIImageView *image2View = [[UIImageView alloc] initWithImage:[[[DWImage alloc] init] image2InPod]];
-    image2View.frame = CGRectMake(100, 0, 100, 100);
+    image2View.frame = CGRectMake(100, 100, 100, 100);
 
     [self.view addSubview:image1View];
     [self.view addSubview:image2View];

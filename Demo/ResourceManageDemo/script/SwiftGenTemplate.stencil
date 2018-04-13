@@ -1,0 +1,65 @@
+// SwiftGen xcassets template for Asprin
+{% set enumName %}{{param.enumName|default:"Asset"}}{% endset %}
+{% set imageType %}{{param.imageTypeName|default:"ImageAsset"}}{% endset %}
+{% if catalogs %}
+import UIKit
+
+{% macro enumBlock assets sp %}
+{{sp}}  {% call casesBlock assets sp %}
+{{sp}}  {% if not param.noAllValues %}
+{{sp}}  {% endif %}
+{% endmacro %}
+{% macro casesBlock assets sp %}
+{{sp}}  {% for asset in assets %}
+{{sp}}  {% if asset.type == "color" %}
+{{sp}}  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{colorType}}(name: "{{asset.value}}")
+{{sp}}  {% elif asset.type == "image" %}
+{{sp}}  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{imageType}}(name: "{{asset.value}}")
+{{sp}}  {% elif asset.items %}
+{{sp}}  enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {{sp}}    {% set sp2 %}{{sp}}  {% endset %}
+    {{sp}}    {% call casesBlock asset.items sp2 %}
+    {{sp}}  }
+{{sp}}  {% endif %}
+{{sp}}  {% endfor %}
+{% endmacro %}
+{% macro allValuesBlock assets filter prefix sp %}
+{{sp}}  {% for asset in assets %}
+{{sp}}  {% if asset.type == filter %}
+{{sp}}  {{prefix}}{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}},
+{{sp}}  {% elif asset.items %}
+{{sp}}  {% set prefix2 %}{{prefix}}{{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}}.{% endset %}
+{{sp}}  {% call allValuesBlock asset.items filter prefix2 sp %}
+{{sp}}  {% endif %}
+{{sp}}  {% endfor %}
+{% endmacro %}
+enum {{enumName}} {
+{% if catalogs.count > 1 %}
+    {% for catalog in catalogs %}
+    enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% call enumBlock catalog.assets "    " %}
+    }
+    {% endfor %}
+    {% else %}
+    {% call enumBlock catalogs.first.assets "" %}
+    {% endif %}
+}
+
+struct {{imageType}} {
+    fileprivate var name: String
+    var image: UIImage {
+        let bundle = Bundle(for: BundleToken.self)
+        let image = UIImage(named: name, in: bundle, compatibleWith: nil)
+        guard let result = image else { 
+            fatalError("Unable to load image named \(name).") 
+        }
+        return result
+    }
+}
+
+final class BundleToken { }
+{% else %}
+// No assets found
+{% endif %}
+
+

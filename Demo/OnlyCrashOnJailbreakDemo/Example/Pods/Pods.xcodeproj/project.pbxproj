@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		059A1A3050BF01A1AA1C0E68579EEA34 /* Pods-ResourcesOCPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8279CC06BA48D1B97B612E37AE3441 /* Pods-ResourcesOCPod_Tests-dummy.m */; };
+		059A1A3050BF01A1AA1C0E68579EEA34 /* Pods-ResourcesOCPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8270FB215A4B47A832A240DB026C366E /* Pods-ResourcesOCPod_Tests-dummy.m */; };
 		133D499782D2181F4619C3DF5AD6E584 /* DWImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFC0DE77E3571CE0CDD1FB7C90DECDB /* DWImage.m */; };
-		1A6C2008E33471EC9B48984FB4A32171 /* Pods-ResourcesOCPod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CD7BCB8EA700A5490E275276B99D137 /* Pods-ResourcesOCPod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A6C2008E33471EC9B48984FB4A32171 /* Pods-ResourcesOCPod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16C14F44AA0C3B7330603466EDEB980E /* Pods-ResourcesOCPod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		419F1469FDFB8CE492ED98DF743ECE9C /* DWImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 62FA76D3375598DA6B5EDDBF895BB4B8 /* DWImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		686ECCDB9537409824C5ACC7160025C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		7A5AB52EA8DF146C1DEE37285DE441ED /* Pods-ResourcesOCPod_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC847785453C4444DFBB1D6A0B27D6E /* Pods-ResourcesOCPod_Example-dummy.m */; };
+		7A5AB52EA8DF146C1DEE37285DE441ED /* Pods-ResourcesOCPod_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 164694A6C1ECD46C7566B64F8C1F7074 /* Pods-ResourcesOCPod_Example-dummy.m */; };
 		8A62891F501AC321F3EC3F405C6EB166 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		93EBE27A57D6955FD85C9D88567AE0F5 /* ResourcesOCPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D324872E5D7D88739FAE81FEAAA7D4A1 /* ResourcesOCPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C819CD8484C2878485D1BB99B5C4E52 /* Pods-ResourcesOCPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA7BA2646AB1704AC63DE09F331327B /* Pods-ResourcesOCPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93EBE27A57D6955FD85C9D88567AE0F5 /* ResourcesOCPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7ABA1CD46F69C42A140D519A9786609 /* ResourcesOCPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C819CD8484C2878485D1BB99B5C4E52 /* Pods-ResourcesOCPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7357564ADCCB2EE4EE38773BF5C38DB1 /* Pods-ResourcesOCPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A500AAEC316DF6FAFF1D9EB9C2F0FEDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		BFF275697A57BAF95BEF98E5BA8C2270 /* ResourcesOCPod.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4088DB2520D89862A0910B0F5817D94 /* ResourcesOCPod.bundle */; };
-		FC4C1AFC69266FDED45CA2A8AD892450 /* ResourcesOCPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5979BA43F16D90F64EC0DF6CA245127 /* ResourcesOCPod-dummy.m */; };
+		FC4C1AFC69266FDED45CA2A8AD892450 /* ResourcesOCPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F23E6AEB7548292A75C20796CD50C30A /* ResourcesOCPod-dummy.m */; };
 		FDC97895CD51DA9BA3CC08EFC5CD6234 /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFA0DF162394960D6AAEA20408D4D573 /* image.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -40,45 +40,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D39EFBA88F49D9CC3B7B08CED47ACB8 /* Pods-ResourcesOCPod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ResourcesOCPod_Tests.modulemap"; sourceTree = "<group>"; };
-		187286ADFFDB093F1D02F9401C68B525 /* Pods-ResourcesOCPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1CD7BCB8EA700A5490E275276B99D137 /* Pods-ResourcesOCPod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ResourcesOCPod_Tests-umbrella.h"; sourceTree = "<group>"; };
-		1FFCEB5C36B9DA8BBCEB0A3AC99FAE97 /* ResourcesOCPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ResourcesOCPod-prefix.pch"; sourceTree = "<group>"; };
+		1373D293916D6FB5B38F1D3AB262B917 /* ResourcesOCPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ResourcesOCPod.modulemap; sourceTree = "<group>"; };
+		15D666977A1E6BE7EBE906562A66A089 /* Pods-ResourcesOCPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		164694A6C1ECD46C7566B64F8C1F7074 /* Pods-ResourcesOCPod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResourcesOCPod_Example-dummy.m"; sourceTree = "<group>"; };
+		16C14F44AA0C3B7330603466EDEB980E /* Pods-ResourcesOCPod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ResourcesOCPod_Tests-umbrella.h"; sourceTree = "<group>"; };
+		17C1298EDFE3447487E83313A2740C90 /* Pods-ResourcesOCPod_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Tests-resources.sh"; sourceTree = "<group>"; };
+		1E5FEC92B681856F56774DF02C49AB44 /* Pods-ResourcesOCPod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResourcesOCPod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		220086093E26AC9B7A3494D8EF0C2543 /* ResourcesOCPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ResourcesOCPod.framework; path = ResourcesOCPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		225C6F2C5B3087B4B260BB296785A43B /* Pods-ResourcesOCPod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResourcesOCPod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		29E83730BE05B8DAFE9738FB8F08C25F /* Pods-ResourcesOCPod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResourcesOCPod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		349D0EF7B014D478A0B4F82163C2D25B /* ResourceBundle-ResourcesOCPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ResourcesOCPod-Info.plist"; sourceTree = "<group>"; };
-		36BACB1B2134FB700EB8DE7879509ACC /* Pods-ResourcesOCPod_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		3AA7BA2646AB1704AC63DE09F331327B /* Pods-ResourcesOCPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ResourcesOCPod_Example-umbrella.h"; sourceTree = "<group>"; };
-		3C990A22DF4864A6DF054C2AEEEB4823 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C565D43DD9E6B305D5D9CF642595A57 /* Pods-ResourcesOCPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3E2E7BEE641B080E79056F91D0A34BD7 /* Pods_ResourcesOCPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ResourcesOCPod_Example.framework; path = "Pods-ResourcesOCPod_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BC847785453C4444DFBB1D6A0B27D6E /* Pods-ResourcesOCPod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResourcesOCPod_Example-dummy.m"; sourceTree = "<group>"; };
-		4DB7B5490B00BF79FCA7EB12AD84C471 /* ResourcesOCPod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ResourcesOCPod.xcconfig; sourceTree = "<group>"; };
+		4D04A947220D2149E4E702CDA5AC4DAC /* Pods-ResourcesOCPod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResourcesOCPod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		53FE2C451AF90BBC9861606A03628972 /* Pods-ResourcesOCPod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResourcesOCPod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		55C54EE05BFD451942F388F9824C7561 /* ResourcesOCPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ResourcesOCPod-prefix.pch"; sourceTree = "<group>"; };
 		58EFED403D07CDEFCEC8D72CC9CF12E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		5FAB692A1E3AEAC737BB6451AC17629E /* Pods-ResourcesOCPod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ResourcesOCPod_Example.modulemap"; sourceTree = "<group>"; };
+		60AA4242661E808EF907FE811C644D6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62FA76D3375598DA6B5EDDBF895BB4B8 /* DWImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWImage.h; path = ResourcesOCPod/Classes/DWImage.h; sourceTree = "<group>"; };
 		65D11704DF6BC9AAE6E6D03DD41D0F28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6A8279CC06BA48D1B97B612E37AE3441 /* Pods-ResourcesOCPod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResourcesOCPod_Tests-dummy.m"; sourceTree = "<group>"; };
-		6AF7CCD5AF55C9A56550E1A39823AE4C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		688D13B813D8600A6A599B1BF2132950 /* ResourcesOCPod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ResourcesOCPod.xcconfig; sourceTree = "<group>"; };
+		7357564ADCCB2EE4EE38773BF5C38DB1 /* Pods-ResourcesOCPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ResourcesOCPod_Example-umbrella.h"; sourceTree = "<group>"; };
+		7821BA54C7025DCA127E35D479A3B70B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CC5918B5D6EE084B25294A2204A2330 /* Pods_ResourcesOCPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ResourcesOCPod_Tests.framework; path = "Pods-ResourcesOCPod_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8270FB215A4B47A832A240DB026C366E /* Pods-ResourcesOCPod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResourcesOCPod_Tests-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EB35475D8766F6B6EABB7399D15F7C0 /* Pods-ResourcesOCPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A5979BA43F16D90F64EC0DF6CA245127 /* ResourcesOCPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ResourcesOCPod-dummy.m"; sourceTree = "<group>"; };
-		ADF58594D4469E443574F567AB963754 /* Pods-ResourcesOCPod_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Example-resources.sh"; sourceTree = "<group>"; };
-		AE042DF65CAC4F9C300FCB31035431DE /* Pods-ResourcesOCPod_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Tests-resources.sh"; sourceTree = "<group>"; };
+		9A8A327F6E3C8830A207262F7DB39A67 /* Pods-ResourcesOCPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A1B368BECF81FE49106ED49F0B3A4F83 /* Pods-ResourcesOCPod_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResourcesOCPod_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		A7ABA1CD46F69C42A140D519A9786609 /* ResourcesOCPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ResourcesOCPod-umbrella.h"; sourceTree = "<group>"; };
+		AF487B0E03DE27044D9050391FA05C02 /* Pods-ResourcesOCPod_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		AFFC0DE77E3571CE0CDD1FB7C90DECDB /* DWImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DWImage.m; path = ResourcesOCPod/Classes/DWImage.m; sourceTree = "<group>"; };
-		B2ED901351F27AF7BECBEFFE536243FB /* Pods-ResourcesOCPod_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResourcesOCPod_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B324F85B5C16B46A3D25D9A7150A8A26 /* ResourcesOCPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ResourcesOCPod.modulemap; sourceTree = "<group>"; };
 		B6A977B3FA181396AEBC40F4045395B8 /* ResourcesOCPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ResourcesOCPod.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B75BFF66B216251C623D28BE3E50C770 /* Pods-ResourcesOCPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB3AE3E820373EFCBF3A5530E52E48B6 /* ResourceBundle-ResourcesOCPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ResourcesOCPod-Info.plist"; sourceTree = "<group>"; };
 		BFA0DF162394960D6AAEA20408D4D573 /* image.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = image.xcassets; path = ResourcesOCPod/image.xcassets; sourceTree = "<group>"; };
-		D324872E5D7D88739FAE81FEAAA7D4A1 /* ResourcesOCPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ResourcesOCPod-umbrella.h"; sourceTree = "<group>"; };
 		D4088DB2520D89862A0910B0F5817D94 /* ResourcesOCPod.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ResourcesOCPod.bundle; path = "ResourcesOCPod-ResourcesOCPod.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2BAE563FB5CEA7360F6945269A25028 /* Pods-ResourcesOCPod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Example-frameworks.sh"; sourceTree = "<group>"; };
-		E7690625B45365C23B4D708CDC4CDD4F /* Pods-ResourcesOCPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E97532BF3DF80FAF03A9210D3A6963F7 /* Pods-ResourcesOCPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResourcesOCPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F7A14212BEE0208CFC23E54B5C90CA36 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBA9AF6304B7CA202547FD480A063F22 /* Pods-ResourcesOCPod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResourcesOCPod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DAB0D1E2BF544BFC7FB4AD0F5D356D52 /* Pods-ResourcesOCPod_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Example-resources.sh"; sourceTree = "<group>"; };
+		E07613562785C9ED46F4E76120213827 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E583EBD14F95F8AAFBB817C3B2EBFCF4 /* Pods-ResourcesOCPod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ResourcesOCPod_Tests.modulemap"; sourceTree = "<group>"; };
+		F182955CA9C038AD0AF3778DC404FA91 /* Pods-ResourcesOCPod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ResourcesOCPod_Example.modulemap"; sourceTree = "<group>"; };
+		F23E6AEB7548292A75C20796CD50C30A /* ResourcesOCPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ResourcesOCPod-dummy.m"; sourceTree = "<group>"; };
+		FCB4723FC7B91A3CA8A93E10891A030A /* Pods-ResourcesOCPod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResourcesOCPod_Example-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,21 +116,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16D7F15B15491B52AC9BF26C91F51CEB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3C990A22DF4864A6DF054C2AEEEB4823 /* Info.plist */,
-				349D0EF7B014D478A0B4F82163C2D25B /* ResourceBundle-ResourcesOCPod-Info.plist */,
-				B324F85B5C16B46A3D25D9A7150A8A26 /* ResourcesOCPod.modulemap */,
-				4DB7B5490B00BF79FCA7EB12AD84C471 /* ResourcesOCPod.xcconfig */,
-				A5979BA43F16D90F64EC0DF6CA245127 /* ResourcesOCPod-dummy.m */,
-				1FFCEB5C36B9DA8BBCEB0A3AC99FAE97 /* ResourcesOCPod-prefix.pch */,
-				D324872E5D7D88739FAE81FEAAA7D4A1 /* ResourcesOCPod-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ResourcesOCPod";
-			sourceTree = "<group>";
-		};
 		34472AF51E7BB0073DDAC838DFB88C81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +125,24 @@
 				220086093E26AC9B7A3494D8EF0C2543 /* ResourcesOCPod.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		65A7FA671665324569555CAD04FB99B8 /* Pods-ResourcesOCPod_Example */ = {
+			isa = PBXGroup;
+			children = (
+				60AA4242661E808EF907FE811C644D6C /* Info.plist */,
+				F182955CA9C038AD0AF3778DC404FA91 /* Pods-ResourcesOCPod_Example.modulemap */,
+				53FE2C451AF90BBC9861606A03628972 /* Pods-ResourcesOCPod_Example-acknowledgements.markdown */,
+				A1B368BECF81FE49106ED49F0B3A4F83 /* Pods-ResourcesOCPod_Example-acknowledgements.plist */,
+				164694A6C1ECD46C7566B64F8C1F7074 /* Pods-ResourcesOCPod_Example-dummy.m */,
+				FCB4723FC7B91A3CA8A93E10891A030A /* Pods-ResourcesOCPod_Example-frameworks.sh */,
+				DAB0D1E2BF544BFC7FB4AD0F5D356D52 /* Pods-ResourcesOCPod_Example-resources.sh */,
+				7357564ADCCB2EE4EE38773BF5C38DB1 /* Pods-ResourcesOCPod_Example-umbrella.h */,
+				9A8A327F6E3C8830A207262F7DB39A67 /* Pods-ResourcesOCPod_Example.debug.xcconfig */,
+				2C565D43DD9E6B305D5D9CF642595A57 /* Pods-ResourcesOCPod_Example.release.xcconfig */,
+			);
+			name = "Pods-ResourcesOCPod_Example";
+			path = "Target Support Files/Pods-ResourcesOCPod_Example";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -168,10 +171,28 @@
 				AFFC0DE77E3571CE0CDD1FB7C90DECDB /* DWImage.m */,
 				E6342D27A1D58113D75D2D72E10C8820 /* Pod */,
 				D0D03ECD9E39B4383C382BF50E9A9526 /* Resources */,
-				16D7F15B15491B52AC9BF26C91F51CEB /* Support Files */,
+				EA44B575B013B1328B3100AE5BDCD293 /* Support Files */,
 			);
 			name = ResourcesOCPod;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		9976A98AF5CD62290127CA9C8BCD537E /* Pods-ResourcesOCPod_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E07613562785C9ED46F4E76120213827 /* Info.plist */,
+				E583EBD14F95F8AAFBB817C3B2EBFCF4 /* Pods-ResourcesOCPod_Tests.modulemap */,
+				1E5FEC92B681856F56774DF02C49AB44 /* Pods-ResourcesOCPod_Tests-acknowledgements.markdown */,
+				4D04A947220D2149E4E702CDA5AC4DAC /* Pods-ResourcesOCPod_Tests-acknowledgements.plist */,
+				8270FB215A4B47A832A240DB026C366E /* Pods-ResourcesOCPod_Tests-dummy.m */,
+				AF487B0E03DE27044D9050391FA05C02 /* Pods-ResourcesOCPod_Tests-frameworks.sh */,
+				17C1298EDFE3447487E83313A2740C90 /* Pods-ResourcesOCPod_Tests-resources.sh */,
+				16C14F44AA0C3B7330603466EDEB980E /* Pods-ResourcesOCPod_Tests-umbrella.h */,
+				B75BFF66B216251C623D28BE3E50C770 /* Pods-ResourcesOCPod_Tests.debug.xcconfig */,
+				15D666977A1E6BE7EBE906562A66A089 /* Pods-ResourcesOCPod_Tests.release.xcconfig */,
+			);
+			name = "Pods-ResourcesOCPod_Tests";
+			path = "Target Support Files/Pods-ResourcesOCPod_Tests";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -182,47 +203,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C7B995E9C4538915E4018669D0397453 /* Pods-ResourcesOCPod_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				F7A14212BEE0208CFC23E54B5C90CA36 /* Info.plist */,
-				0D39EFBA88F49D9CC3B7B08CED47ACB8 /* Pods-ResourcesOCPod_Tests.modulemap */,
-				225C6F2C5B3087B4B260BB296785A43B /* Pods-ResourcesOCPod_Tests-acknowledgements.markdown */,
-				29E83730BE05B8DAFE9738FB8F08C25F /* Pods-ResourcesOCPod_Tests-acknowledgements.plist */,
-				6A8279CC06BA48D1B97B612E37AE3441 /* Pods-ResourcesOCPod_Tests-dummy.m */,
-				36BACB1B2134FB700EB8DE7879509ACC /* Pods-ResourcesOCPod_Tests-frameworks.sh */,
-				AE042DF65CAC4F9C300FCB31035431DE /* Pods-ResourcesOCPod_Tests-resources.sh */,
-				1CD7BCB8EA700A5490E275276B99D137 /* Pods-ResourcesOCPod_Tests-umbrella.h */,
-				9EB35475D8766F6B6EABB7399D15F7C0 /* Pods-ResourcesOCPod_Tests.debug.xcconfig */,
-				E7690625B45365C23B4D708CDC4CDD4F /* Pods-ResourcesOCPod_Tests.release.xcconfig */,
-			);
-			name = "Pods-ResourcesOCPod_Tests";
-			path = "Target Support Files/Pods-ResourcesOCPod_Tests";
-			sourceTree = "<group>";
-		};
-		C7F0AE5BDEE619A479A1BAA23ED37C37 /* Pods-ResourcesOCPod_Example */ = {
-			isa = PBXGroup;
-			children = (
-				6AF7CCD5AF55C9A56550E1A39823AE4C /* Info.plist */,
-				5FAB692A1E3AEAC737BB6451AC17629E /* Pods-ResourcesOCPod_Example.modulemap */,
-				FBA9AF6304B7CA202547FD480A063F22 /* Pods-ResourcesOCPod_Example-acknowledgements.markdown */,
-				B2ED901351F27AF7BECBEFFE536243FB /* Pods-ResourcesOCPod_Example-acknowledgements.plist */,
-				4BC847785453C4444DFBB1D6A0B27D6E /* Pods-ResourcesOCPod_Example-dummy.m */,
-				E2BAE563FB5CEA7360F6945269A25028 /* Pods-ResourcesOCPod_Example-frameworks.sh */,
-				ADF58594D4469E443574F567AB963754 /* Pods-ResourcesOCPod_Example-resources.sh */,
-				3AA7BA2646AB1704AC63DE09F331327B /* Pods-ResourcesOCPod_Example-umbrella.h */,
-				E97532BF3DF80FAF03A9210D3A6963F7 /* Pods-ResourcesOCPod_Example.debug.xcconfig */,
-				187286ADFFDB093F1D02F9401C68B525 /* Pods-ResourcesOCPod_Example.release.xcconfig */,
-			);
-			name = "Pods-ResourcesOCPod_Example";
-			path = "Target Support Files/Pods-ResourcesOCPod_Example";
-			sourceTree = "<group>";
-		};
 		CB9CD748F6FC64F245BC50B83AE04034 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C7F0AE5BDEE619A479A1BAA23ED37C37 /* Pods-ResourcesOCPod_Example */,
-				C7B995E9C4538915E4018669D0397453 /* Pods-ResourcesOCPod_Tests */,
+				65A7FA671665324569555CAD04FB99B8 /* Pods-ResourcesOCPod_Example */,
+				9976A98AF5CD62290127CA9C8BCD537E /* Pods-ResourcesOCPod_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -251,6 +236,21 @@
 				B6A977B3FA181396AEBC40F4045395B8 /* ResourcesOCPod.podspec */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		EA44B575B013B1328B3100AE5BDCD293 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7821BA54C7025DCA127E35D479A3B70B /* Info.plist */,
+				BB3AE3E820373EFCBF3A5530E52E48B6 /* ResourceBundle-ResourcesOCPod-Info.plist */,
+				1373D293916D6FB5B38F1D3AB262B917 /* ResourcesOCPod.modulemap */,
+				688D13B813D8600A6A599B1BF2132950 /* ResourcesOCPod.xcconfig */,
+				F23E6AEB7548292A75C20796CD50C30A /* ResourcesOCPod-dummy.m */,
+				55C54EE05BFD451942F388F9824C7561 /* ResourcesOCPod-prefix.pch */,
+				A7ABA1CD46F69C42A140D519A9786609 /* ResourcesOCPod-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ResourcesOCPod";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,8 +361,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -456,7 +456,7 @@
 /* Begin XCBuildConfiguration section */
 		0FA4FF48047388280F47B6B75973D1F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7690625B45365C23B4D708CDC4CDD4F /* Pods-ResourcesOCPod_Tests.release.xcconfig */;
+			baseConfigurationReference = 15D666977A1E6BE7EBE906562A66A089 /* Pods-ResourcesOCPod_Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -489,7 +489,7 @@
 		};
 		4EADE18616AC7E4482743C5964834E75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DB7B5490B00BF79FCA7EB12AD84C471 /* ResourcesOCPod.xcconfig */;
+			baseConfigurationReference = 688D13B813D8600A6A599B1BF2132950 /* ResourcesOCPod.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -518,7 +518,7 @@
 		};
 		673A458AB7C5FC059B60EFE7ECA59C3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E97532BF3DF80FAF03A9210D3A6963F7 /* Pods-ResourcesOCPod_Example.debug.xcconfig */;
+			baseConfigurationReference = 9A8A327F6E3C8830A207262F7DB39A67 /* Pods-ResourcesOCPod_Example.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -550,7 +550,7 @@
 		};
 		7F86263235F03F7CEEFCDF582358D938 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DB7B5490B00BF79FCA7EB12AD84C471 /* ResourcesOCPod.xcconfig */;
+			baseConfigurationReference = 688D13B813D8600A6A599B1BF2132950 /* ResourcesOCPod.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -580,7 +580,7 @@
 		};
 		937B14003C8266DCD9C362852A465F83 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DB7B5490B00BF79FCA7EB12AD84C471 /* ResourcesOCPod.xcconfig */;
+			baseConfigurationReference = 688D13B813D8600A6A599B1BF2132950 /* ResourcesOCPod.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ResourcesOCPod";
@@ -594,64 +594,9 @@
 			};
 			name = Debug;
 		};
-		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
 		BB7AABFFD2D2082E1F3460F0A3009D2A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 187286ADFFDB093F1D02F9401C68B525 /* Pods-ResourcesOCPod_Example.release.xcconfig */;
+			baseConfigurationReference = 2C565D43DD9E6B305D5D9CF642595A57 /* Pods-ResourcesOCPod_Example.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -682,7 +627,7 @@
 			};
 			name = Release;
 		};
-		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
+		C3E37FB098AE76440E29106ADBF00CEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -692,10 +637,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -703,6 +650,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -742,9 +690,67 @@
 			};
 			name = Debug;
 		};
+		DA03565BE765DB55C6448FB363A44481 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
 		F8BDB41C267CA9A0ADE01C3261A4A889 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DB7B5490B00BF79FCA7EB12AD84C471 /* ResourcesOCPod.xcconfig */;
+			baseConfigurationReference = 688D13B813D8600A6A599B1BF2132950 /* ResourcesOCPod.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ResourcesOCPod";
@@ -760,7 +766,7 @@
 		};
 		FE343EE40176DC304B11159E6CB79150 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EB35475D8766F6B6EABB7399D15F7C0 /* Pods-ResourcesOCPod_Tests.debug.xcconfig */;
+			baseConfigurationReference = B75BFF66B216251C623D28BE3E50C770 /* Pods-ResourcesOCPod_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -796,8 +802,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
-				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
+				C3E37FB098AE76440E29106ADBF00CEB /* Debug */,
+				DA03565BE765DB55C6448FB363A44481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

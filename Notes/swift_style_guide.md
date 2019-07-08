@@ -1,5 +1,26 @@
 ## Swift 编码风格
 
+## Table of Contents
+
+- [1.代码格式](#1.代码格式)
+- [2.命名](#2.命名)
+- [3.编码风格](#3.编码风格)
+  - [3.1 基础](#3.1-基础)
+  - [3.2 访问修饰符](#3.2-访问修饰符)
+  - [3.3 自定义操作符](#3.3-自定义操作符)
+  - [3.4 `Switch` 语句和 `enum`s](#3.4-`Switch`-语句和-`enum`s)
+  - [3.5 可选值 Optionals](#3.5-可选值-Optionals)
+  - [3.6 协议 Protocols](#3.6-协议-Protocols)
+  - [3.7 属性 Properties](#3.7-属性-Properties)
+  - [3.8 闭包 Closures](#3.8-闭包-Closures)
+  - [3.9 数组 Arrays](#3.9-数组-Arrays)
+  - [3.10 错误处理 Error Handling](#3.10-错误处理-Error-Handling)
+  - [3.11 使用 Guard](#3.11-使用-Guard)
+- [4.文档及注释 Documentation / Comments](#4.文档及注释-Documentation-/-Comments)
+  - [4.1 文档](#4.1-文档)
+  - [4.2 Other Commenting Guidelines:其他的注释规则](#4.2-Other-Commenting-Guidelines:其他的注释规则)
+- [参考](#参考)
+
 ### 1.代码格式
 
 - 1.1 使用**4个空格**来代替Tabs
@@ -107,7 +128,7 @@ if x == firstReallyReallyLongFunction()
 }
 ```
 
-### 2 命名
+### 2.命名
 
 - 2.1 类名不需要**前缀**。比如是 `String` 而不是 `NSString`
 - 2.2 使用 `PascalCase` 规则对 `struct`, `enum`, `class`, `typedef`, `associatedtype` 类型命名
@@ -267,7 +288,7 @@ protocol InputTextViewProtocol {
 }
 ```
 
-### 3 编码风格
+### 3.编码风格
 
 #### 3.1 基础
 
@@ -829,7 +850,7 @@ guard let thingOne = thingOne else {
 guard let thingOne = thingOne else { return }
 ```
 
-### 4. 文档及注释 Documentation/Comments
+### 4.文档及注释 Documentation/Comments
 
 #### 4.1 文档
 

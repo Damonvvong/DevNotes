@@ -1,4 +1,4 @@
-## Swift 编码风格
+# Swift 编码风格
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@
   - [4.2 Other Commenting Guidelines:其他的注释规则](#4.2-Other-Commenting-Guidelines:其他的注释规则)
 - [参考](#参考)
 
-### 1.代码格式
+## 1.代码格式
 
 - 1.1 使用**4个空格**来代替Tabs
     - Xcode -> Preferences -> Text Editing -> Indentation - Tab width: **4** speaces
@@ -70,6 +70,7 @@ class Dog: Animal {
     /* ... */
 }
 ```
+
 - 1.7 **逗号**后面都要加一个**空格**
 
 ```Swift
@@ -128,15 +129,15 @@ if x == firstReallyReallyLongFunction()
 }
 ```
 
-### 2.命名
+## 2.命名
 
 - 2.1 类名不需要**前缀**。比如是 `String` 而不是 `NSString`
 - 2.2 使用 `PascalCase` 规则对 `struct`, `enum`, `class`, `typedef`, `associatedtype` 类型命名
     - **PascalCase**: 大驼峰命名，它主要的特点是将描述变量作用所有单词的首字母大写，然后直接连接起来，单词之间没有连接符
-   
+
 - 2.3 使用`camelCase`规则，对函数名、方法名、属性名、常量名、变量名、参数名、枚举case等命名
     - **camelCase**: 小驼峰命名，它主要的特点是将描述变量作用第一个单词首字母小写其他所有单词的首字母大写，然后直接连接起来，单词之间没有连接符
-    
+
 - 2.4 在处理**缩写单词**的时候，尽可能的全部大写，并且保证代码中统一。如果遇到需要首字母小写且**缩写单词**在首字母时，所有的单词都需要小写
 
 ```Swift
@@ -179,8 +180,8 @@ class MyClassName {
 - 2.6 对于泛型或者关联类型，使用 `PascalCase` 描述泛型，如果泛型名与父类或者子类重复，那么可以添加一个`Type`后缀名到泛型名上。
 
 ```Swift
-class DXYClass<Model> { 
-    /* ... */ 
+class DXYClass<Model> {
+    /* ... */
 }
 
 protocol Modelable {
@@ -196,13 +197,13 @@ protocol Sequence {
 
 ```swift
 // 推荐
-class Cat: Animal { 
-    /* ... */ 
+class Cat: Animal {
+    /* ... */
 }
 
 // 不推荐
-class SmallAnimal: Animal { 
-    /* ... */ 
+class SmallAnimal: Animal {
+    /* ... */
 }
 ```
 
@@ -255,6 +256,7 @@ class ConnectionTableViewCell: UITableViewCell {
     let popupViewController: UICollectionViewController
 }
 ```
+
 - 2.10 对于函数和构造器，除非上下文已经很清晰，最好为所有参数添加局部参数名。如果可以的话，最好也添加外部参数名来让函数调用语句更易读。
 
 ```Swift
@@ -264,6 +266,7 @@ func timedAction(afterDelay delay: NSTimeInterval, perform action: SKAction) -> 
 convertPointAt(column: 42, row: 13)
 timedAction(afterDelay: 1.0, perform: someOtherAction)
 ```
+
 - 2.11 根据 [Apple's API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) ，一个 `protocol` 需要命名为一个名词用来描述需要做什么（比如，`Collection`）并且使用 `able`, `ible`, or `ing` 等后缀来描述其能力（比如，`Equatable`, `ProgressReporting`）。如果前面几个对你都没有意义，你可以添加 `Protocol` 来命名。
 
 ```swift
@@ -288,9 +291,9 @@ protocol InputTextViewProtocol {
 }
 ```
 
-### 3.编码风格
+## 3.编码风格
 
-#### 3.1 基础
+### 3.1 基础
 
 - 3.1.1 尽可能地使用 **let** 来代替 **var**
 
@@ -337,7 +340,7 @@ let lastName = name.lastName
 - 3.1.5 在创建 delegates/protocol 的时候需要小心 **Retain Cycles**, 这些属性要声明为 weak
 
 - 3.1.6 在闭包中直接使用 **self** 可能会导致 **Retain Cycles**, 建议使用**捕获列表**
-    - **捕获列表:** [capture list](https://developer.apple.com/library/ios/documentation/swift/conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-XID_163)
+  - **捕获列表:** [capture list](https://developer.apple.com/library/ios/documentation/swift/conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-XID_163)
 
 ```swift
 myFunctionWithEscapingClosure() { [weak self] (error) -> Void in
@@ -350,6 +353,7 @@ myFunctionWithEscapingClosure() { [weak self] (error) -> Void in
     strongSelf.doSomething()
 }
 ```
+
 - 3.1.7 不要使用**标记中断**(在某个代码处写一个标记，通过 break 或者 continue 个跳转)
 
 - 3.1.8 不要在控制流逻辑判断的时候加上**圆括号**
@@ -411,7 +415,7 @@ do {
 
 - 3.1.16 为了给一组静态函数或者静态变量一个**命名空间**，建议使用`enum`，而不是 `struct` 或者 `class`。在这个方式下，你不需要为这个容器增加一个初始化方法 `private init() { }`
 
-#### 3.2 访问修饰符
+### 3.2 访问修饰符
 
 - 3.2.1 **访问修饰符**需要放在第一位
 
@@ -443,10 +447,10 @@ class DXY {
 - 3.2.4 如果某个变量需要被单元测试所使用，你必须把它标注为 **internal** 保证**@testable import ModuleName**。这里特别注意的是，哪些被声明为 **private** 的变量为了测试用途改成了 **internal**，那么需要注释声明一下。
 
 - 3.2.5 优先使用 **private** 而不是 **fileprivate**
- 
+
 - 3.2.6 当你在 **public** 和 **open** 选择时。优先选择 **public**，除非你打算被外部模块继承并使用。值得注意的是，当使用 **@testable import**，任何 **internal**、**public**、**open**都可以被继承，所以这个不是你使用 **open**的理由。一般来说，使用 **open** 会让使用者更加领过，但出于一些模块的考虑，使用 **public** 会更加严谨和安全。
 
-#### 3.3 自定义操作符
+### 3.3 自定义操作符
 
 尽可能使用命名函数，而不是自定义操作符。
 
@@ -454,7 +458,7 @@ class DXY {
 
 你可以重载已经存在的操作符去支持新的类型（尤其是 `==`）。但是，你的重载必须保留运算符语义。比如 `==` 一定是测试相等并返回一个布尔值
 
-#### 3.4 `Switch` 语句和 `enum`s
+### 3.4 `Switch` 语句和 `enum`s
 
 - 3.4.1 对于一个有限的枚举，在使用 **Switch** 语句的时候，尽量避免使用 **default**关键字，应该把没有使用的case放到最下面然后使用 **break** 关键字来阻止执行
 
@@ -495,7 +499,7 @@ func handleDigit(_ digit: Int) throws {
 }
 ```
 
-#### 3.5 可选值 Optionals
+### 3.5 可选值 Optionals
 
 - 3.5.1 只有使用 `@IBOutlets` 可以使用**隐式解包**，虽然在有些场景下，使用**隐式解包**也不会出现任何问题，但是为了保持一致和安全，建议不要使用。相同原因，**也不要在任何地方使用强制解包**！**不要在任何地方使用强制解包**！**不要在任何地方使用强制解包**！
 - 3.5.2 不要使用 `as!` or `try!`
@@ -532,7 +536,7 @@ guard let optionalValue = optionalValue else {
 }
 ```
 
-#### 3.6 协议 Protocols
+### 3.6 协议 Protocols
 
 在实现协议的时候，大致有两种代码组织方式：
     1. 使用 `// MARK:` 来注释你实现协议中声明的方法。
@@ -540,11 +544,11 @@ guard let optionalValue = optionalValue else {
 但是，有一点需要注意的是，如果你使用了第二种方式，那么定义在 `extension` 中的方法是无法被子类重载的，这样会让你的测试变得很困难。
 最后，即便你使用了第二种方式，还是需要添加`// MARK:`注释，方便借助 Xcode 快速定位到相关代码。
 
-#### 3.7 属性 Properties
+### 3.7 属性 Properties
 
 - 3.7.1 如果你要定义一个只读的计算属性，不需要显示的声明 `get { }`
 
-```Swift 
+```Swift
 var computedProperty: String {
     if someBool {
         return "I'm a mighty pirate!"
@@ -588,13 +592,13 @@ class PirateManager {
 }
 ```
 
-#### 3.8 闭包 Closures
+### 3.8 闭包 Closures
 
 - 3.8.1 为了可读性和一致性，建议显示的声明传入参数的类型，除非这个参数的类型很容易被理解。
 
 ```swift
 // 隐藏类型
-doSomething() { response in 
+doSomething() { response in
     // ...
 }
 
@@ -620,6 +624,7 @@ let completion: () -> Void = {
 
 let completion: (() -> Void)? = nil
 ```
+
 - 3.8.3 尽量保证让所有的参数名和左括号保持在同一行。（需要注意的是，一行不要超过 160 个字符）
 
 - 3.8.4 尽量使用**尾随闭包**的方式，除非需要显示的声明闭包的含义。
@@ -638,7 +643,7 @@ doSomething(1.0, success: { (parameter1) in
 })
 ```
 
-#### 3.9 数组 Arrays
+### 3.9 数组 Arrays
 
 - 3.9.1 通常情况下，不要直接通过下标直接访问某个数组。尽可能的使用类似 .first、.last 这类不会造成闪退的方法进行访问。
 - 3.9.2 使用 `for item in items` 来代替 `for i in 0` 的写法。
@@ -647,7 +652,7 @@ doSomething(1.0, success: { (parameter1) in
 - 3.9.4 (考虑到编译时间)不要使用 += 或者 + 运算符来增加或者链接数组，应该使用 `.append()` 或者 `.append(contentsOf:)`。
 - 3.9.5 当你要声明一个数组是另外两个数组相加并且要保持这两个数组是不可变的。用 `let myNewArray = [arr1, arr2].joined()` 来代替 `let myNewArray = arr1 + arr2`。
 
-#### 3.10 错误处理 Error Handling
+### 3.10 错误处理 Error Handling
 
 - 通常情况下，我们会选择可选值作为一个函数的返回值，当这个函数在某些条件下可能返回为空。示例如下：
 
@@ -715,7 +720,7 @@ func printSomeFile() {
 
 所以，当我们需要知道为什么返回为空时，且这个原因不能从语义上看出来，需要用 **Error Handling** 来处理。而对于空值产生原因不关心时，可以返回一个可选值。
 
-#### 3.11 使用 Guard
+### 3.11 使用 Guard
 
 - 3.11.1 一般来说，我们会优先使用 **Early Return** 的策略来避免 **if** 表达式中多层嵌套的代码。在这个前提下，使用 **guard** 语句可以有效的提高代码的可读性
 
@@ -783,6 +788,7 @@ guard !operationFailed else {
     return
 }
 ```
+
 - 3.11.4 当我们要处理两个不同的状态时，优先使用 **if** 语句而不是 **guard** 语句。
 
 ```Swift
@@ -850,9 +856,9 @@ guard let thingOne = thingOne else {
 guard let thingOne = thingOne else { return }
 ```
 
-### 4.文档及注释 Documentation/Comments
+## 4.文档及注释 Documentation / Comments
 
-#### 4.1 文档
+### 4.1 文档
 
 如果一个函数的复杂度不是 O(1),那么最好给这个函数添加一些文档注释，这样能有效的提高代码的可读性和可维护性。
 如果通过一个比较独特方式去实现一个(有趣、棘手、不明显)的函数，也需要给这个函数添加注释。
@@ -881,6 +887,7 @@ class Human {
     }
 }
 ```
+
 - 4.1.5 如果你准备对参数/返回值/异常值来写注释，那么注意要一个不落的全局加上，尽管有时候会让文档显得重复冗余。有时候，如果只需要对单个参数进行注释，那么还不如直接放在描述里进行声明，而不需要专门的为参数写一个注释。
 - 4.1.6 对于复杂的使用类，应该添加一些具体的使用用例来描述类的用法。注意 **Swift** 的注释文档中是支持MarkDown语法的，这是一个很好的特性。
 
@@ -926,9 +933,10 @@ func myFunction() {
     /* ... */
 }
 ```
+
 - 4.1.8 保证文档的注释尽可能的简洁
 
-#### 4.2 Other Commenting Guidelines:其他的注释规则
+### 4.2 Other Commenting Guidelines:其他的注释规则
 
 - 4.2.1 //后面总是要跟上一个空格
 
@@ -948,12 +956,9 @@ class Pirate {
 }
 ```
 
-### 参考
+## 参考
 
 - [Raywenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
 - [Linkedin Swift Style Guide](https://github.com/linkedin/swift-style-guide)
 - [Github Swift Style Guide](https://github.com/github/swift-style-guide)
 - [Eure  Swift Style Guide](https://github.com/eure/swift-style-guide)
-
-
-

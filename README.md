@@ -20,6 +20,10 @@
     - 启动图的正确打开方式？
     - 使用 Swift 混编的项目会对包体积有什么影响？到底如何抉择是否使用Swift。
 
+- [优化 App 启动](https://github.com/Damonvvong/DevNotes/blob/master/Notes/optimizing_app_launch.md)
+
+- [Diff 算法在 iOS 中的应用(一)](https://github.com/Damonvvong/DevNotes/blob/master/Notes/diff_1.md)
+
 </details>
 
 <details>
